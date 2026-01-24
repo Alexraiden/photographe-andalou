@@ -1,0 +1,231 @@
+/**
+ * Design Tokens & CSS Custom Properties
+ *
+ * Esthétique "Editorial Monochrome"
+ * Noir profond, blanc pur, nuances de gris raffinées
+ * Accent subtil : ivoire chaud
+ */
+
+:root {
+  /* ============================================
+     COLORS - Palette Monochrome Raffinée
+     ============================================ */
+
+  /* Backgrounds - Noir vers blanc */
+  --color-bg-primary: #000000;        /* Noir pur */
+  --color-bg-secondary: #0a0a0a;      /* Noir profond */
+  --color-bg-tertiary: #141414;       /* Noir charbon */
+  --color-bg-elevated: #1a1a1a;       /* Surfaces surélevées */
+  --color-bg-muted: #242424;          /* Fond atténué */
+
+  /* Text - Hiérarchie épurée */
+  --color-text-primary: #ffffff;      /* Blanc pur */
+  --color-text-secondary: #b3b3b3;    /* Gris moyen */
+  --color-text-tertiary: #737373;     /* Gris foncé */
+  --color-text-disabled: #4d4d4d;     /* Gris très foncé */
+
+  /* Accent - Ivoire chaud subtil */
+  --color-accent-primary: #e8e4dc;    /* Ivoire chaud */
+  --color-accent-hover: #f5f2ed;      /* Ivoire clair */
+  --color-accent-active: #d9d4c9;     /* Ivoire foncé */
+  --color-accent-subtle: rgba(232, 228, 220, 0.08);
+
+  /* Semantic colors */
+  --color-success: #8a8a8a;
+  --color-error: #a3a3a3;
+  --color-warning: #999999;
+  --color-info: #8f8f8f;
+
+  /* Overlays & Transparencies */
+  --color-overlay-dark: rgba(0, 0, 0, 0.92);
+  --color-overlay-medium: rgba(0, 0, 0, 0.6);
+  --color-overlay-light: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  /* Font Families - Cormorant Garamond + DM Sans */
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Monaco', monospace;
+
+  /* Font Sizes - Échelle harmonique */
+  --font-size-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);      /* 11-13px */
+  --font-size-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);      /* 13-14px */
+  --font-size-base: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);      /* 14-16px */
+  --font-size-md: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);         /* 16-20px */
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);     /* 20-28px */
+  --font-size-xl: clamp(1.75rem, 1.4rem + 1.75vw, 3rem);        /* 28-48px */
+  --font-size-2xl: clamp(2.25rem, 1.75rem + 2.5vw, 4rem);       /* 36-64px */
+  --font-size-3xl: clamp(3rem, 2.25rem + 3.75vw, 6rem);         /* 48-96px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.03em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.08em;
+  --letter-spacing-wider: 0.15em;
+  --letter-spacing-widest: 0.25em;
+
+
+  /* ============================================
+     SPACING - Échelle modérée
+     ============================================ */
+
+  --spacing-2xs: 0.25rem;     /* 4px */
+  --spacing-xs: 0.5rem;       /* 8px */
+  --spacing-sm: 0.75rem;      /* 12px */
+  --spacing-md: 1rem;         /* 16px */
+  --spacing-lg: 1.5rem;       /* 24px */
+  --spacing-xl: 2rem;         /* 32px */
+  --spacing-2xl: 3rem;        /* 48px */
+  --spacing-3xl: 4rem;        /* 64px */
+  --spacing-4xl: 6rem;        /* 96px */
+
+  /* Section spacing - Équilibré */
+  --section-padding-y: clamp(3rem, 6vw, 5rem);
+  --section-padding-x: clamp(1.5rem, 5vw, 3rem);
+
+  /* Container */
+  --container-max-width: 1200px;
+  --container-narrow: 800px;
+  --container-wide: 1400px;
+
+
+  /* ============================================
+     LAYOUT & GRID
+     ============================================ */
+
+  --grid-columns: 12;
+  --grid-gap: var(--spacing-md);
+  --grid-gap-sm: var(--spacing-xs);
+  --grid-gap-lg: var(--spacing-lg);
+
+  /* Gallery carousel */
+  --gallery-gap: 0.75rem;
+  --gallery-item-height: clamp(160px, 24vh, 220px);
+  --carousel-button-size: 40px;
+
+
+  /* ============================================
+     TRANSITIONS & ANIMATIONS
+     ============================================ */
+
+  --transition-fast: 0.15s;
+  --transition-medium: 0.25s;
+  --transition-slow: 0.4s;
+  --transition-slower: 0.6s;
+
+  /* Easing - Élégant et subtil */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Animation durations */
+  --animation-page-transition: 0.3s;
+  --animation-hover: 0.2s;
+
+
+  /* ============================================
+     BORDERS & SHADOWS
+     ============================================ */
+
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Shadows - Très subtiles */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 8px 40px rgba(0, 0, 0, 0.6);
+
+
+  /* ============================================
+     Z-INDEX
+     ============================================ */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-navigation: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-lightbox: 600;
+  --z-tooltip: 700;
+
+
+  /* ============================================
+     COMPONENTS
+     ============================================ */
+
+  /* Navigation */
+  --nav-height: 56px;
+  --nav-height-mobile: 48px;
+
+  /* Hero */
+  --hero-min-height: 70vh;
+  --hero-overlay: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  /* Image aspect ratios */
+  --aspect-square: 1/1;
+  --aspect-landscape: 3/2;
+  --aspect-portrait: 2/3;
+  --aspect-wide: 16/9;
+
+  /* Blur */
+  --blur-placeholder: 8px;
+  --blur-background: 12px;
+}
+
+
+/* ============================================
+   PREFERS REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.01ms;
+    --transition-medium: 0.01ms;
+    --transition-slow: 0.01ms;
+    --transition-slower: 0.01ms;
+    --animation-page-transition: 0.01ms;
+    --animation-hover: 0.01ms;
+  }
+}
+
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  :root {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f5f5f5;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+  }
+}

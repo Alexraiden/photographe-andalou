@@ -1,0 +1,299 @@
+/**
+ * Navigation Component
+ *
+ * Design minimaliste et raffiné
+ * Mobile-first avec menu overlay élégant
+ */
+
+/* ============================================
+   Navigation Container
+   ============================================ */
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-navigation);
+  background-color: transparent;
+  transition: background-color var(--transition-medium) var(--ease-out);
+}
+
+.navigation.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.navigation.hidden {
+  transform: translateY(-100%);
+}
+
+/* Navigation inner wrapper */
+.navigation .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+
+/* ============================================
+   Logo / Brand
+   ============================================ */
+
+.navigation .logo {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: opacity var(--transition-fast) var(--ease-out);
+  z-index: calc(var(--z-navigation) + 2);
+}
+
+.navigation .logo:hover {
+  opacity: 0.7;
+}
+
+
+/* ============================================
+   Desktop Navigation Menu
+   ============================================ */
+
+.nav-menu {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  transition: color var(--transition-fast) var(--ease-out);
+  position: relative;
+  padding: var(--spacing-xs) 0;
+}
+
+.nav-menu a:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-menu a.active {
+  color: var(--color-text-primary);
+}
+
+/* Subtle underline on hover */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-text-primary);
+  transition: width var(--transition-medium) var(--ease-out);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+
+/* ============================================
+   Language Switcher
+   ============================================ */
+
+.language-switcher {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  z-index: calc(var(--z-navigation) + 2);
+  margin-left: var(--spacing-xl);
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: color var(--transition-fast) var(--ease-out);
+}
+
+.language-switcher button:hover {
+  color: var(--color-text-secondary);
+}
+
+.language-switcher button.active {
+  color: var(--color-text-primary);
+}
+
+
+/* ============================================
+   Mobile Burger Menu
+   ============================================ */
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  z-index: calc(var(--z-navigation) + 2);
+}
+
+.nav-burger span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-text-primary);
+  transition: all var(--transition-medium) var(--ease-out);
+}
+
+/* Burger animation when open */
+.nav-burger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ============================================
+   Mobile Overlay Menu
+   ============================================ */
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-bg-primary);
+  z-index: calc(var(--z-navigation) + 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-slow) var(--ease-out),
+              visibility var(--transition-slow) var(--ease-out);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menu inside overlay */
+.nav-overlay .nav-menu {
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform var(--transition-slow) var(--ease-out) 0.1s,
+              opacity var(--transition-slow) var(--ease-out) 0.1s;
+}
+
+.nav-overlay.active .nav-menu {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-overlay .nav-menu a {
+  font-size: var(--font-size-md);
+  letter-spacing: var(--letter-spacing-widest);
+  padding: var(--spacing-sm);
+}
+
+/* Disable underline on mobile */
+.nav-overlay .nav-menu a::after {
+  display: none;
+}
+
+/* Mobile language switcher in overlay */
+.nav-overlay .language-switcher {
+  margin-top: var(--spacing-2xl);
+  margin-left: 0;
+}
+
+
+/* ============================================
+   Mobile Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .navigation .container {
+    height: var(--nav-height-mobile);
+  }
+
+  /* Hide desktop menu */
+  .navigation .container > .nav-menu {
+    display: none;
+  }
+
+  /* Hide desktop language switcher */
+  .navigation .container > .language-switcher {
+    display: none;
+  }
+
+  /* Show burger */
+  .nav-burger {
+    display: flex;
+  }
+
+  /* Logo smaller on mobile */
+  .navigation .logo {
+    font-size: var(--font-size-md);
+  }
+}
+
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+.nav-burger:focus-visible {
+  outline: 1px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
+
+.nav-menu a:focus-visible {
+  outline: 1px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-burger,
+  .nav-burger span,
+  .nav-overlay,
+  .nav-overlay .nav-menu,
+  .navigation {
+    transition: none;
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "home": {
+    "hero": {
+      "type": "image",
+      "media": {
+        "desktop": "/assets/images/hero/cabo-sunset-2400.svg",
+        "tablet": "/assets/images/hero/cabo-sunset-2400.svg",
+        "mobile": "/assets/images/hero/cabo-sunset-2400.svg",
+        "placeholder": "/assets/images/hero/cabo-sunset-2400.svg",
+        "alt": "hero.alt"
+      },
+      "titleKey": "home.hero.title",
+      "subtitleKey": "home.hero.subtitle",
+      "ctaKey": "home.hero.cta"
+    },
+    "intro": {
+      "headingKey": "home.intro.heading",
+      "textKey": "home.intro.text"
+    },
+    "featuredCollections": ["cabo-de-gata", "portraits", "travels"]
+  },
+  "about": {
+    "hero": {
+      "image": "/assets/images/about/portrait.jpg",
+      "altKey": "about.hero.alt"
+    },
+    "sections": [
+      {
+        "type": "text",
+        "headingKey": "about.philosophy.heading",
+        "contentKey": "about.philosophy.content"
+      },
+      {
+        "type": "text",
+        "headingKey": "about.journey.heading",
+        "contentKey": "about.journey.content"
+      }
+    ]
+  },
+  "cabo": {
+    "hero": {
+      "type": "fullscreen",
+      "media": "/assets/images/collections/cabo-de-gata/hero.jpg",
+      "titleKey": "cabo.hero.title",
+      "subtitleKey": "cabo.hero.subtitle"
+    },
+    "story": {
+      "sections": [
+        {
+          "type": "text-block",
+          "headingKey": "cabo.story.light.heading",
+          "contentKey": "cabo.story.light.content"
+        },
+        {
+          "type": "text-block",
+          "headingKey": "cabo.story.desert.heading",
+          "contentKey": "cabo.story.desert.content"
+        },
+        {
+          "type": "text-block",
+          "headingKey": "cabo.story.sea.heading",
+          "contentKey": "cabo.story.sea.content"
+        }
+      ]
+    },
+    "gallery": {
+      "collectionId": "cabo-de-gata",
+      "layout": "cinematic"
+    }
+  },
+  "contact": {
+    "headingKey": "contact.heading",
+    "subtextKey": "contact.subtext",
+    "formFields": ["name", "email", "subject", "message"]
+  }
+}

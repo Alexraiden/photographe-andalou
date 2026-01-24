@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "Photographer Name - Luz Andaluza",
+    "description": "Fotografía de paisaje, retrato y reportaje desde Cabo de Gata y el mundo",
+    "author": "Photographer Name",
+    "keywords": [
+      "fotografía",
+      "andalucía",
+      "cabo de gata",
+      "paisaje",
+      "retrato",
+      "reportaje",
+      "photography",
+      "landscape",
+      "portrait"
+    ],
+    "baseUrl": "https://photographe-andalou.com",
+    "defaultLanguage": "es",
+    "availableLanguages": ["es", "en", "fr"]
+  },
+  "contact": {
+    "email": "contact@photographe-andalou.com",
+    "instagram": "@photographer_andalou",
+    "location": "Carboneras, Andalusia, Spain"
+  },
+  "settings": {
+    "imagesPerPage": 20,
+    "enableLazyLoading": true,
+    "transitionDuration": 800,
+    "heroVideoReady": false
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "cabo": "Cabo de Gata",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Andalusian Light",
+      "subtitle": "Photography from the edge of Europe",
+      "cta": "Explore"
+    },
+    "intro": {
+      "heading": "Stories in Light",
+      "text": "Capturing the essence of Cabo de Gata and beyond through landscapes, portraits, and the daily life of people and places inhabiting this volcanic territory between desert and sea."
+    }
+  },
+  "collections": {
+    "cabo": {
+      "name": "Cabo de Gata",
+      "description": "The volcanic desert where earth meets sea",
+      "coverAlt": "Cabo de Gata landscape"
+    },
+    "portraits": {
+      "name": "Portraits",
+      "description": "Faces and stories of people",
+      "coverAlt": "Portrait photography"
+    },
+    "travels": {
+      "name": "Travels",
+      "description": "Moments captured around the world",
+      "coverAlt": "Travel photography"
+    },
+    "reportages": {
+      "name": "Reportages",
+      "description": "Documentary and photographic stories",
+      "coverAlt": "Photo reportage"
+    }
+  },
+  "cabo": {
+    "hero": {
+      "title": "Cabo de Gata - Níjar",
+      "subtitle": "A volcanic desert at the edge of the Mediterranean"
+    },
+    "story": {
+      "light": {
+        "heading": "The Light",
+        "content": "This is where Africa begins in Europe. A unique, pure, and golden light bathes this arid territory. Over 3000 hours of sunshine per year create an incomparable atmosphere, transforming the landscape with each hour of the day."
+      },
+      "desert": {
+        "heading": "The Desert",
+        "content": "The only desert in continental Europe. A lunar landscape shaped by extinct volcanoes, where scarce rainfall has created a unique ecosystem. Here, life adapts to heat and thirst."
+      },
+      "sea": {
+        "heading": "The Sea",
+        "content": "The clearest waters of the Spanish Mediterranean. Hidden coves between volcanic cliffs, where deep blue contrasts with desert ochre. A meeting of extremes."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "alt": "Photographer portrait"
+    },
+    "philosophy": {
+      "heading": "Philosophy",
+      "content": "Photography is seeing. Really seeing. It's paying attention to what others overlook. It's finding beauty in the ordinary and capturing moments worth remembering."
+    },
+    "journey": {
+      "heading": "The Journey",
+      "content": "Born and raised in Carboneras, my camera is an extension of my gaze. What began as curiosity about my homeland became a need to capture the essence of the places and people I encounter."
+    }
+  },
+  "contact": {
+    "heading": "Let's Connect",
+    "subtext": "Available for projects worldwide",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "instagram": "Follow on Instagram",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "viewMore": "View more",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

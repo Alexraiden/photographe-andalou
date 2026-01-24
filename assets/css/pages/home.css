@@ -1,0 +1,178 @@
+/**
+ * Home Page Styles
+ *
+ * Page d'accueil avec hero et galerie carousel 3 rangées
+ * Design éditorial monochrome sobre
+ */
+
+/* ============================================
+   Home Hero
+   ============================================ */
+
+.home-hero {
+  margin-top: calc(var(--nav-height) * -1);
+}
+
+
+/* ============================================
+   Home Intro Section
+   ============================================ */
+
+.home-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--section-padding-x);
+}
+
+.home-intro h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.home-intro p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-relaxed);
+}
+
+
+/* ============================================
+   Home Gallery Carousel Section
+   ============================================ */
+
+.home-gallery {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-bg-primary);
+}
+
+.home-gallery-header {
+  text-align: center;
+  padding: 0 var(--section-padding-x);
+  margin-bottom: var(--spacing-xl);
+}
+
+.home-gallery-header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.home-gallery-header p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+
+/* ============================================
+   Home Collections Grid
+   ============================================ */
+
+.home-collections {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.home-collections-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.home-collections-header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  color: var(--color-text-primary);
+}
+
+
+/* ============================================
+   Home CTA Section
+   ============================================ */
+
+.home-cta {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--section-padding-x);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.home-cta p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--spacing-md);
+}
+
+.home-cta a {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  text-decoration: none;
+  transition: all var(--transition-medium) var(--ease-out);
+}
+
+.home-cta a:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-text-primary);
+}
+
+
+/* ============================================
+   Mobile Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-hero {
+    margin-top: 0;
+  }
+
+  .home-intro {
+    padding: var(--spacing-xl) var(--section-padding-x);
+  }
+
+  .home-intro h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .home-intro p {
+    font-size: var(--font-size-sm);
+  }
+
+  .home-gallery {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .home-gallery-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .home-gallery-header h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .home-collections {
+    padding: var(--spacing-xl) var(--section-padding-x);
+  }
+
+  .home-collections-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .home-collections-header h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .home-cta {
+    padding: var(--spacing-xl) var(--section-padding-x);
+  }
+}

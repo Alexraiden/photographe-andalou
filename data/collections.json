@@ -1,0 +1,84 @@
+{
+  "collections": [
+    {
+      "id": "cabo-de-gata",
+      "slug": "cabo-de-gata",
+      "nameKey": "collections.cabo.name",
+      "descriptionKey": "collections.cabo.description",
+      "coverImage": {
+        "src": "/assets/images/collections/cabo-de-gata/cover.svg",
+        "placeholder": "/assets/images/collections/cabo-de-gata/cover.svg",
+        "altKey": "collections.cabo.coverAlt"
+      },
+      "imageCount": 12,
+      "layout": "cinematic",
+      "featured": true,
+      "order": 1,
+      "metadata": {
+        "location": "Cabo de Gata - Níjar Natural Park, Andalusia",
+        "yearRange": "2020-2024",
+        "tags": ["landscape", "desert", "sea", "nature", "andalusia"]
+      }
+    },
+    {
+      "id": "portraits",
+      "slug": "portraits",
+      "nameKey": "collections.portraits.name",
+      "descriptionKey": "collections.portraits.description",
+      "coverImage": {
+        "src": "/assets/images/collections/portraits/cover.svg",
+        "placeholder": "/assets/images/collections/portraits/cover.svg",
+        "altKey": "collections.portraits.coverAlt"
+      },
+      "imageCount": 8,
+      "layout": "masonry",
+      "featured": true,
+      "order": 2,
+      "metadata": {
+        "location": "Various locations",
+        "yearRange": "2018-2024",
+        "tags": ["portrait", "people", "faces", "humanity"]
+      }
+    },
+    {
+      "id": "travels",
+      "slug": "travels",
+      "nameKey": "collections.travels.name",
+      "descriptionKey": "collections.travels.description",
+      "coverImage": {
+        "src": "/assets/images/collections/travels/cover.svg",
+        "placeholder": "/assets/images/collections/travels/cover.svg",
+        "altKey": "collections.travels.coverAlt"
+      },
+      "imageCount": 10,
+      "layout": "grid",
+      "featured": true,
+      "order": 3,
+      "metadata": {
+        "location": "Europe, Africa, Asia, America",
+        "yearRange": "2015-2024",
+        "tags": ["travel", "street", "culture", "world"]
+      }
+    },
+    {
+      "id": "reportages",
+      "slug": "reportages",
+      "nameKey": "collections.reportages.name",
+      "descriptionKey": "collections.reportages.description",
+      "coverImage": {
+        "src": "/assets/images/collections/reportages/cover.svg",
+        "placeholder": "/assets/images/collections/reportages/cover.svg",
+        "altKey": "collections.reportages.coverAlt"
+      },
+      "imageCount": 6,
+      "layout": "horizontal-scroll",
+      "featured": false,
+      "order": 4,
+      "metadata": {
+        "location": "Various locations",
+        "yearRange": "2019-2024",
+        "tags": ["reportage", "documentary", "story", "journalism"]
+      }
+    }
+  ]
+}

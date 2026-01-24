@@ -1,0 +1,279 @@
+/**
+ * Hero Component
+ *
+ * Design sobre et impactant
+ * Plein écran avec contenu minimal
+ */
+
+/* ============================================
+   Hero Container
+   ============================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-min-height);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+.hero.hero-fullscreen {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+}
+
+.hero.hero-large {
+  min-height: 75vh;
+}
+
+.hero.hero-medium {
+  min-height: 55vh;
+}
+
+.hero.hero-small {
+  min-height: 40vh;
+}
+
+
+/* ============================================
+   Hero Media (Image/Video)
+   ============================================ */
+
+.hero-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-media img,
+.hero-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(15%) contrast(1.05);
+}
+
+/* LQIP placeholder blur effect */
+.hero-media img.placeholder {
+  filter: blur(var(--blur-placeholder)) grayscale(20%);
+  transform: scale(1.05);
+}
+
+.hero-media img.loaded {
+  filter: grayscale(15%) contrast(1.05);
+  transform: scale(1);
+  transition: filter var(--transition-slow) var(--ease-out),
+              transform var(--transition-slower) var(--ease-out);
+}
+
+
+/* ============================================
+   Hero Overlay
+   ============================================ */
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-overlay.dark {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.hero-overlay.light {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+.hero-overlay.none {
+  background: none;
+}
+
+
+/* ============================================
+   Hero Content
+   ============================================ */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--section-padding-x);
+  color: var(--color-text-primary);
+}
+
+.hero-content.align-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content.align-right {
+  text-align: right;
+}
+
+/* Hero title */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-secondary);
+  max-width: 500px;
+}
+
+/* Hero CTA */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-medium) var(--ease-out);
+}
+
+.hero-cta:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-text-primary);
+}
+
+
+/* ============================================
+   Hero Scroll Indicator
+   ============================================ */
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-widest);
+}
+
+.hero-scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-text-tertiary) 0%,
+    transparent 100%
+  );
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.5);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero.hero-fullscreen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .hero-content {
+    padding: var(--spacing-2xl) var(--section-padding-x);
+  }
+
+  .hero-title {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-indicator::after {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  .hero-media img.loaded {
+    transition: none;
+  }
+}

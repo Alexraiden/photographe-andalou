@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "gallery": "Galería",
+    "cabo": "Cabo de Gata",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "title": "Luz Andaluza",
+      "subtitle": "Fotografía desde el borde de Europa",
+      "cta": "Explorar"
+    },
+    "intro": {
+      "heading": "Historias de Luz",
+      "text": "Capturando la esencia de Cabo de Gata y más allá, a través de paisajes, retratos y la vida cotidiana de personas y lugares que habitan este territorio volcánico entre el desierto y el mar."
+    }
+  },
+  "collections": {
+    "cabo": {
+      "name": "Cabo de Gata",
+      "description": "El desierto volcánico donde la tierra se encuentra con el mar",
+      "coverAlt": "Paisaje de Cabo de Gata"
+    },
+    "portraits": {
+      "name": "Retratos",
+      "description": "Rostros y historias de personas",
+      "coverAlt": "Retrato fotográfico"
+    },
+    "travels": {
+      "name": "Viajes",
+      "description": "Momentos capturados alrededor del mundo",
+      "coverAlt": "Fotografía de viajes"
+    },
+    "reportages": {
+      "name": "Reportajes",
+      "description": "Historias documentales y fotográficas",
+      "coverAlt": "Reportaje fotográfico"
+    }
+  },
+  "cabo": {
+    "hero": {
+      "title": "Cabo de Gata - Níjar",
+      "subtitle": "Un desierto volcánico en el borde del Mediterráneo"
+    },
+    "story": {
+      "light": {
+        "heading": "La Luz",
+        "content": "Aquí es donde África comienza en Europa. Una luz única, pura y dorada que baña este territorio árido. Más de 3000 horas de sol al año crean una atmósfera incomparable, transformando el paisaje a cada hora del día."
+      },
+      "desert": {
+        "heading": "El Desierto",
+        "content": "El único desierto de Europa continental. Un paisaje lunar moldeado por volcanes extintos, donde la escasez de lluvia ha creado un ecosistema único. Aquí, la vida se adapta al calor y a la sed."
+      },
+      "sea": {
+        "heading": "El Mar",
+        "content": "Las aguas más cristalinas del Mediterráneo español. Calas escondidas entre acantilados volcánicos, donde el azul profundo contrasta con el ocre del desierto. Un encuentro de extremos."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "alt": "Retrato del fotógrafo"
+    },
+    "philosophy": {
+      "heading": "Filosofía",
+      "content": "La fotografía es ver. Ver de verdad. Es prestar atención a lo que otros pasan por alto. Es encontrar belleza en lo ordinario y capturar momentos que merecen ser recordados."
+    },
+    "journey": {
+      "heading": "El Camino",
+      "content": "Nacido y criado en Carboneras, mi cámara es una extensión de mi mirada. Lo que comenzó como curiosidad por mi tierra se convirtió en una necesidad de capturar la esencia de los lugares y las personas que encuentro."
+    }
+  },
+  "contact": {
+    "heading": "Conectemos",
+    "subtext": "Disponible para proyectos en todo el mundo",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "submit": "Enviar"
+    }
+  },
+  "footer": {
+    "instagram": "Sígueme en Instagram",
+    "rights": "Todos los derechos reservados"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "viewMore": "Ver más",
+    "close": "Cerrar",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  }
+}

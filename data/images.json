@@ -1,0 +1,115 @@
+{
+  "images": [
+    {
+      "id": "cabo-001",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Amanecer en Las Negras",
+        "en": "Sunrise in Las Negras",
+        "fr": "Lever de soleil à Las Negras"
+      },
+      "description": {
+        "es": "La primera luz del día ilumina la costa volcánica",
+        "en": "The first light of day illuminates the volcanic coast",
+        "fr": "La première lumière du jour illumine la côte volcanique"
+      },
+      "files": {
+        "full": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
+        "large": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
+        "medium": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
+        "small": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
+        "thumb": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
+        "placeholder": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/8, 1/250s",
+        "location": "Las Negras, Cabo de Gata",
+        "date": "2023-06-15",
+        "tags": ["sunrise", "coast", "volcanic", "landscape"]
+      },
+      "order": 1,
+      "featured": true
+    },
+    {
+      "id": "portrait-001",
+      "collectionId": "portraits",
+      "title": {
+        "es": "Pescador de Carboneras",
+        "en": "Fisherman from Carboneras",
+        "fr": "Pêcheur de Carboneras"
+      },
+      "description": {
+        "es": "Rostro marcado por años de mar y sol",
+        "en": "Face marked by years of sea and sun",
+        "fr": "Visage marqué par des années de mer et de soleil"
+      },
+      "files": {
+        "full": "/assets/images/collections/portraits/portrait-001-800.svg",
+        "large": "/assets/images/collections/portraits/portrait-001-800.svg",
+        "medium": "/assets/images/collections/portraits/portrait-001-800.svg",
+        "small": "/assets/images/collections/portraits/portrait-001-800.svg",
+        "thumb": "/assets/images/collections/portraits/portrait-001-800.svg",
+        "placeholder": "/assets/images/collections/portraits/portrait-001-800.svg"
+      },
+      "dimensions": {
+        "width": 2400,
+        "height": 3200,
+        "aspectRatio": "3:4"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 85mm f/1.2",
+        "settings": "ISO 200, f/2.8, 1/500s",
+        "location": "Carboneras, Andalusia",
+        "date": "2023-09-20",
+        "tags": ["portrait", "fisherman", "local", "people"]
+      },
+      "order": 1,
+      "featured": true
+    },
+    {
+      "id": "travel-001",
+      "collectionId": "travels",
+      "title": {
+        "es": "Mercado de Marrakech",
+        "en": "Marrakech Market",
+        "fr": "Marché de Marrakech"
+      },
+      "description": {
+        "es": "Colores y vida en las calles del zoco",
+        "en": "Colors and life in the souk streets",
+        "fr": "Couleurs et vie dans les rues du souk"
+      },
+      "files": {
+        "full": "/assets/images/collections/travels/travel-001-800.svg",
+        "large": "/assets/images/collections/travels/travel-001-800.svg",
+        "medium": "/assets/images/collections/travels/travel-001-800.svg",
+        "small": "/assets/images/collections/travels/travel-001-800.svg",
+        "thumb": "/assets/images/collections/travels/travel-001-800.svg",
+        "placeholder": "/assets/images/collections/travels/travel-001-800.svg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 400, f/5.6, 1/320s",
+        "location": "Marrakech, Morocco",
+        "date": "2022-03-10",
+        "tags": ["travel", "market", "street", "morocco", "africa"]
+      },
+      "order": 1,
+      "featured": true
+    }
+  ]
+}

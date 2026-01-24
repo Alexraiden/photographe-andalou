@@ -1,0 +1,10 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad'$i'" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c89960;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5a4a3a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad'$i')"/>
+  <circle cx="'$((400 + i * 50))'" cy="'$((200 + i * 30))'" r="60" fill="#e0b890" opacity="0.3"/>
+</svg>

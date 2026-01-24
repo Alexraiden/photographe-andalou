@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fotografía de paisaje, retrato y reportaje desde Cabo de Gata y el mundo">
+  <meta name="keywords" content="fotografía, andalucía, cabo de gata, paisaje, retrato, reportaje">
+  <meta name="author" content="Photographer Name">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://photographe-andalou.com">
+  <meta property="og:title" content="Photographer Name - Luz Andaluza">
+  <meta property="og:description" content="Fotografía de paisaje, retrato y reportaje desde Cabo de Gata y el mundo">
+  <meta property="og:image" content="/assets/images/hero/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photographer Name - Luz Andaluza">
+  <meta name="twitter:description" content="Fotografía de paisaje, retrato y reportaje desde Cabo de Gata y el mundo">
+  <meta name="twitter:image" content="/assets/images/hero/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/ui/favicon.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://photographe-andalou.com">
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts - Cormorant Garamond (elegant serif) + DM Sans (modern geometric) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/core/reset.css">
+  <link rel="stylesheet" href="/assets/css/core/variables.css">
+  <link rel="stylesheet" href="/assets/css/core/typography.css">
+  <link rel="stylesheet" href="/assets/css/core/utilities.css">
+  <link rel="stylesheet" href="/assets/css/components/navigation.css">
+  <link rel="stylesheet" href="/assets/css/components/hero.css">
+  <link rel="stylesheet" href="/assets/css/components/gallery.css">
+  <link rel="stylesheet" href="/assets/css/components/lightbox.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/common.css">
+  <link rel="stylesheet" href="/assets/css/pages/home.css">
+  <link rel="stylesheet" href="/assets/css/pages/gallery.css">
+  <link rel="stylesheet" href="/assets/css/pages/cabo.css">
+  <link rel="stylesheet" href="/assets/css/pages/about.css">
+  <link rel="stylesheet" href="/assets/css/pages/contact.css">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+
+  <title>Photographer Name - Luz Andaluza</title>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Photographer Name",
+    "jobTitle": "Photographer",
+    "url": "https://photographe-andalou.com",
+    "image": "/assets/images/about/portrait.jpg",
+    "description": "Photographer specializing in landscape, portrait, and documentary photography from Cabo de Gata, Andalusia, and around the world",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Carboneras",
+      "addressRegion": "Andalusia",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://instagram.com/photographer"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav id="navigation" class="navigation" role="navigation" aria-label="Main navigation">
+    <!-- Navigation will be rendered by Navigation.js -->
+  </nav>
+
+  <!-- Main Application Container -->
+  <main id="app-root" class="app-root" role="main">
+    <!-- Page content will be dynamically rendered here by the router -->
+    <div class="loader" aria-live="polite" aria-busy="true">
+      <div class="loader-spinner"></div>
+      <p>Cargando...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer" role="contentinfo">
+    <!-- Footer will be rendered by Footer.js -->
+  </footer>
+
+  <!-- Lightbox Container (initially hidden) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Lightbox will be rendered by Lightbox.js when opened -->
+  </div>
+
+  <!-- GSAP (Animation Library) from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Application Scripts (type="module" for ES6 modules) -->
+  <script type="module" src="/assets/js/core/app.js"></script>
+
+  <!-- Service Worker Registration (optional, for PWA features) -->
+  <script>
+    // Register service worker for caching (optional - can be added later)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "main": [
+    {
+      "id": "home",
+      "labelKey": "nav.home",
+      "path": "/",
+      "icon": null
+    },
+    {
+      "id": "gallery",
+      "labelKey": "nav.gallery",
+      "path": "/gallery",
+      "icon": null
+    },
+    {
+      "id": "cabo",
+      "labelKey": "nav.cabo",
+      "path": "/cabo-de-gata",
+      "icon": null
+    },
+    {
+      "id": "about",
+      "labelKey": "nav.about",
+      "path": "/about",
+      "icon": null
+    },
+    {
+      "id": "contact",
+      "labelKey": "nav.contact",
+      "path": "/contact",
+      "icon": null
+    }
+  ],
+  "footer": [
+    {
+      "id": "instagram",
+      "labelKey": "footer.instagram",
+      "url": "https://instagram.com/photographer_andalou",
+      "external": true
+    }
+  ],
+  "language": {
+    "type": "dropdown",
+    "position": "top-right"
+  }
+}

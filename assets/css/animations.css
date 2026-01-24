@@ -1,0 +1,282 @@
+/**
+ * Animations CSS
+ *
+ * Animations légères et subtiles
+ * Design éditorial monochrome
+ */
+
+/* ============================================
+   Keyframes
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+
+/* ============================================
+   Animation Classes
+   ============================================ */
+
+.fade-in {
+  animation: fadeIn var(--transition-medium) var(--ease-out) forwards;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-medium) var(--ease-out) forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--transition-slow) var(--ease-out) forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown var(--transition-slow) var(--ease-out) forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft var(--transition-slow) var(--ease-out) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight var(--transition-slow) var(--ease-out) forwards;
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-medium) var(--ease-out) forwards;
+}
+
+
+/* ============================================
+   Stagger Animation (for lists)
+   ============================================ */
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.4s var(--ease-out) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+
+
+/* ============================================
+   Page Transitions
+   ============================================ */
+
+.page-enter {
+  animation: fadeIn var(--animation-page-transition) var(--ease-out) forwards;
+}
+
+.page-exit {
+  animation: fadeOut var(--animation-page-transition) var(--ease-out) forwards;
+}
+
+
+/* ============================================
+   Hover Utilities
+   ============================================ */
+
+.hover-lift {
+  transition: transform var(--transition-medium) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-medium) var(--ease-out);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-opacity {
+  transition: opacity var(--transition-fast) var(--ease-out);
+}
+
+.hover-opacity:hover {
+  opacity: 0.8;
+}
+
+
+/* ============================================
+   Loading States
+   ============================================ */
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  z-index: var(--z-modal);
+}
+
+.loader-spinner {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-border);
+  border-top-color: var(--color-text-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+}
+
+
+/* ============================================
+   Skip to Content (Accessibility)
+   ============================================ */
+
+.skip-to-content {
+  position: fixed;
+  top: -100%;
+  left: var(--spacing-md);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  z-index: calc(var(--z-navigation) + 10);
+  transition: top var(--transition-fast) var(--ease-out);
+}
+
+.skip-to-content:focus {
+  top: var(--spacing-md);
+  outline: 1px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+
+/* ============================================
+   Accessibility - Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .fade-out,
+  .fade-in-up,
+  .fade-in-down,
+  .slide-in-left,
+  .slide-in-right,
+  .scale-in,
+  .stagger-children > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

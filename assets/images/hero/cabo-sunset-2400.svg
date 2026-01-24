@@ -1,0 +1,12 @@
+<svg width="2400" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#c89960;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#2a2a2a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1600" fill="url(#heroGradient)"/>
+  <circle cx="1800" cy="400" r="200" fill="#e0b890" opacity="0.6"/>
+  <text x="1200" y="800" font-family="serif" font-size="120" fill="#f5f5f5" text-anchor="middle" opacity="0.3">Cabo de Gata</text>
+</svg>

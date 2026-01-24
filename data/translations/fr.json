@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "cabo": "Cabo de Gata",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Lumière Andalouse",
+      "subtitle": "Photographie depuis le bout de l'Europe",
+      "cta": "Explorer"
+    },
+    "intro": {
+      "heading": "Histoires de Lumière",
+      "text": "Capturer l'essence de Cabo de Gata et au-delà à travers paysages, portraits et la vie quotidienne des personnes et lieux habitant ce territoire volcanique entre désert et mer."
+    }
+  },
+  "collections": {
+    "cabo": {
+      "name": "Cabo de Gata",
+      "description": "Le désert volcanique où la terre rencontre la mer",
+      "coverAlt": "Paysage de Cabo de Gata"
+    },
+    "portraits": {
+      "name": "Portraits",
+      "description": "Visages et histoires de personnes",
+      "coverAlt": "Photographie de portrait"
+    },
+    "travels": {
+      "name": "Voyages",
+      "description": "Moments capturés autour du monde",
+      "coverAlt": "Photographie de voyage"
+    },
+    "reportages": {
+      "name": "Reportages",
+      "description": "Histoires documentaires et photographiques",
+      "coverAlt": "Reportage photographique"
+    }
+  },
+  "cabo": {
+    "hero": {
+      "title": "Cabo de Gata - Níjar",
+      "subtitle": "Un désert volcanique au bord de la Méditerranée"
+    },
+    "story": {
+      "light": {
+        "heading": "La Lumière",
+        "content": "C'est ici que l'Afrique commence en Europe. Une lumière unique, pure et dorée baigne ce territoire aride. Plus de 3000 heures de soleil par an créent une atmosphère incomparable, transformant le paysage à chaque heure du jour."
+      },
+      "desert": {
+        "heading": "Le Désert",
+        "content": "Le seul désert d'Europe continentale. Un paysage lunaire façonné par des volcans éteints, où les pluies rares ont créé un écosystème unique. Ici, la vie s'adapte à la chaleur et à la soif."
+      },
+      "sea": {
+        "heading": "La Mer",
+        "content": "Les eaux les plus cristallines de la Méditerranée espagnole. Criques cachées entre falaises volcaniques, où le bleu profond contraste avec l'ocre du désert. Une rencontre d'extrêmes."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "alt": "Portrait du photographe"
+    },
+    "philosophy": {
+      "heading": "Philosophie",
+      "content": "La photographie, c'est voir. Vraiment voir. C'est prêter attention à ce que les autres négligent. C'est trouver la beauté dans l'ordinaire et capturer des moments qui méritent d'être rappelés."
+    },
+    "journey": {
+      "heading": "Le Parcours",
+      "content": "Né et élevé à Carboneras, mon appareil photo est une extension de mon regard. Ce qui a commencé comme une curiosité pour ma terre est devenu un besoin de capturer l'essence des lieux et des personnes que je rencontre."
+    }
+  },
+  "contact": {
+    "heading": "Connectons-nous",
+    "subtext": "Disponible pour des projets dans le monde entier",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "instagram": "Suivre sur Instagram",
+    "rights": "Tous droits réservés"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "viewMore": "Voir plus",
+    "close": "Fermer",
+    "previous": "Précédent",
+    "next": "Suivant"
+  }
+}
