@@ -4,22 +4,22 @@
       "id": "cabo-001",
       "collectionId": "cabo-de-gata",
       "title": {
-        "es": "Amanecer en Las Negras",
-        "en": "Sunrise in Las Negras",
-        "fr": "Lever de soleil à Las Negras"
+        "es": "Playa de Mónsul",
+        "en": "Monsul Beach",
+        "fr": "Plage de Mónsul"
       },
       "description": {
-        "es": "La primera luz del día ilumina la costa volcánica",
-        "en": "The first light of day illuminates the volcanic coast",
-        "fr": "La première lumière du jour illumine la côte volcanique"
+        "es": "La icónica playa volcánica de Cabo de Gata",
+        "en": "The iconic volcanic beach of Cabo de Gata",
+        "fr": "La plage volcanique emblématique de Cabo de Gata"
       },
       "files": {
-        "full": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
-        "large": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
-        "medium": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
-        "small": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
-        "thumb": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg",
-        "placeholder": "/assets/images/collections/cabo-de-gata/cabo-001-800.svg"
+        "full": "/assets/images-placeholder/gallery/monsul.jpg",
+        "large": "/assets/images-placeholder/gallery/monsul.jpg",
+        "medium": "/assets/images-placeholder/gallery/monsul.jpg",
+        "small": "/assets/images-placeholder/gallery/monsul-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/monsul-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/monsul-sm.jpg"
       },
       "dimensions": {
         "width": 3200,
@@ -30,12 +30,160 @@
         "camera": "Canon EOS R5",
         "lens": "RF 24-70mm f/2.8",
         "settings": "ISO 100, f/8, 1/250s",
-        "location": "Las Negras, Cabo de Gata",
+        "location": "Playa de Mónsul, Cabo de Gata",
         "date": "2023-06-15",
-        "tags": ["sunrise", "coast", "volcanic", "landscape"]
+        "tags": ["beach", "volcanic", "landscape", "cabo-de-gata"]
       },
       "order": 1,
       "featured": true
+    },
+    {
+      "id": "cabo-002",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Salinas de Cabo de Gata",
+        "en": "Cabo de Gata Salt Flats",
+        "fr": "Salines de Cabo de Gata"
+      },
+      "description": {
+        "es": "Las antiguas salinas reflejan el cielo andaluz",
+        "en": "The ancient salt flats reflect the Andalusian sky",
+        "fr": "Les anciennes salines reflètent le ciel andalou"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/gallery/salinas.jpg",
+        "large": "/assets/images-placeholder/gallery/salinas.jpg",
+        "medium": "/assets/images-placeholder/gallery/salinas.jpg",
+        "small": "/assets/images-placeholder/gallery/salinas-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/salinas-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/salinas-sm.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/11, 1/125s",
+        "location": "Salinas de Cabo de Gata",
+        "date": "2023-07-20",
+        "tags": ["salt-flats", "landscape", "reflection", "cabo-de-gata"]
+      },
+      "order": 2,
+      "featured": true
+    },
+    {
+      "id": "cabo-003",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Pueblo de Níjar",
+        "en": "Níjar Village",
+        "fr": "Village de Níjar"
+      },
+      "description": {
+        "es": "La arquitectura tradicional del pueblo blanco",
+        "en": "Traditional architecture of the white village",
+        "fr": "L'architecture traditionnelle du village blanc"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/gallery/nijar.jpg",
+        "large": "/assets/images-placeholder/gallery/nijar.jpg",
+        "medium": "/assets/images-placeholder/gallery/nijar.jpg",
+        "small": "/assets/images-placeholder/gallery/nijar-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/nijar-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/nijar-sm.jpg"
+      },
+      "dimensions": {
+        "width": 2400,
+        "height": 3200,
+        "aspectRatio": "3:4"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 200, f/5.6, 1/320s",
+        "location": "Níjar, Almería",
+        "date": "2023-05-10",
+        "tags": ["village", "architecture", "white-village", "cabo-de-gata"]
+      },
+      "order": 3,
+      "featured": false
+    },
+    {
+      "id": "cabo-004",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Desierto de Tabernas",
+        "en": "Tabernas Desert",
+        "fr": "Désert de Tabernas"
+      },
+      "description": {
+        "es": "El único desierto de Europa continental",
+        "en": "The only desert in continental Europe",
+        "fr": "Le seul désert d'Europe continentale"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/gallery/tabernas.jpg",
+        "large": "/assets/images-placeholder/gallery/tabernas.jpg",
+        "medium": "/assets/images-placeholder/gallery/tabernas.jpg",
+        "small": "/assets/images-placeholder/gallery/tabernas-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/tabernas-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/tabernas-sm.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/8, 1/500s",
+        "location": "Desierto de Tabernas, Almería",
+        "date": "2023-08-05",
+        "tags": ["desert", "landscape", "tabernas", "cabo-de-gata"]
+      },
+      "order": 4,
+      "featured": true
+    },
+    {
+      "id": "cabo-005",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Mar Mediterráneo",
+        "en": "Mediterranean Sea",
+        "fr": "Mer Méditerranée"
+      },
+      "description": {
+        "es": "Las aguas cristalinas del Mediterráneo",
+        "en": "The crystal clear waters of the Mediterranean",
+        "fr": "Les eaux cristallines de la Méditerranée"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/gallery/mediterranean.jpg",
+        "large": "/assets/images-placeholder/gallery/mediterranean.jpg",
+        "medium": "/assets/images-placeholder/gallery/mediterranean.jpg",
+        "small": "/assets/images-placeholder/gallery/mediterranean-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/mediterranean-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/mediterranean-sm.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/8, 1/320s",
+        "location": "Cabo de Gata",
+        "date": "2023-06-20",
+        "tags": ["sea", "mediterranean", "water", "cabo-de-gata"]
+      },
+      "order": 5,
+      "featured": false
     },
     {
       "id": "portrait-001",
@@ -51,12 +199,12 @@
         "fr": "Visage marqué par des années de mer et de soleil"
       },
       "files": {
-        "full": "/assets/images/collections/portraits/portrait-001-800.svg",
-        "large": "/assets/images/collections/portraits/portrait-001-800.svg",
-        "medium": "/assets/images/collections/portraits/portrait-001-800.svg",
-        "small": "/assets/images/collections/portraits/portrait-001-800.svg",
-        "thumb": "/assets/images/collections/portraits/portrait-001-800.svg",
-        "placeholder": "/assets/images/collections/portraits/portrait-001-800.svg"
+        "full": "/assets/images-placeholder/gallery/pescador.jpg",
+        "large": "/assets/images-placeholder/gallery/pescador.jpg",
+        "medium": "/assets/images-placeholder/gallery/pescador.jpg",
+        "small": "/assets/images-placeholder/gallery/pescador-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/pescador-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/pescador-sm.jpg"
       },
       "dimensions": {
         "width": 2400,
@@ -75,6 +223,43 @@
       "featured": true
     },
     {
+      "id": "portrait-002",
+      "collectionId": "portraits",
+      "title": {
+        "es": "Mujer Bereber",
+        "en": "Berber Woman",
+        "fr": "Femme Berbère"
+      },
+      "description": {
+        "es": "Tradición y dignidad en una mirada",
+        "en": "Tradition and dignity in a gaze",
+        "fr": "Tradition et dignité dans un regard"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/gallery/mujer-bereber.jpg",
+        "large": "/assets/images-placeholder/gallery/mujer-bereber.jpg",
+        "medium": "/assets/images-placeholder/gallery/mujer-bereber.jpg",
+        "small": "/assets/images-placeholder/gallery/mujer-bereber-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/mujer-bereber-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/mujer-bereber-sm.jpg"
+      },
+      "dimensions": {
+        "width": 2400,
+        "height": 3200,
+        "aspectRatio": "3:4"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 85mm f/1.2",
+        "settings": "ISO 400, f/2, 1/250s",
+        "location": "Morocco",
+        "date": "2022-04-15",
+        "tags": ["portrait", "berber", "woman", "morocco"]
+      },
+      "order": 2,
+      "featured": true
+    },
+    {
       "id": "travel-001",
       "collectionId": "travels",
       "title": {
@@ -88,12 +273,12 @@
         "fr": "Couleurs et vie dans les rues du souk"
       },
       "files": {
-        "full": "/assets/images/collections/travels/travel-001-800.svg",
-        "large": "/assets/images/collections/travels/travel-001-800.svg",
-        "medium": "/assets/images/collections/travels/travel-001-800.svg",
-        "small": "/assets/images/collections/travels/travel-001-800.svg",
-        "thumb": "/assets/images/collections/travels/travel-001-800.svg",
-        "placeholder": "/assets/images/collections/travels/travel-001-800.svg"
+        "full": "/assets/images-placeholder/gallery/marrakech.jpg",
+        "large": "/assets/images-placeholder/gallery/marrakech.jpg",
+        "medium": "/assets/images-placeholder/gallery/marrakech.jpg",
+        "small": "/assets/images-placeholder/gallery/marrakech-sm.jpg",
+        "thumb": "/assets/images-placeholder/gallery/marrakech-sm.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/marrakech-sm.jpg"
       },
       "dimensions": {
         "width": 3200,
@@ -109,6 +294,154 @@
         "tags": ["travel", "market", "street", "morocco", "africa"]
       },
       "order": 1,
+      "featured": true
+    },
+    {
+      "id": "cabo-006",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Faro de Cabo de Gata",
+        "en": "Cabo de Gata Lighthouse",
+        "fr": "Phare de Cabo de Gata"
+      },
+      "description": {
+        "es": "El faro que guía a los navegantes desde 1863",
+        "en": "The lighthouse guiding sailors since 1863",
+        "fr": "Le phare qui guide les navigateurs depuis 1863"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/cabo-gata/faro-gata.jpg",
+        "large": "/assets/images-placeholder/cabo-gata/faro-gata.jpg",
+        "medium": "/assets/images-placeholder/cabo-gata/faro-gata.jpg",
+        "small": "/assets/images-placeholder/cabo-gata/faro-gata.jpg",
+        "thumb": "/assets/images-placeholder/cabo-gata/faro-gata.jpg",
+        "placeholder": "/assets/images-placeholder/cabo-gata/faro-gata.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/11, 1/160s",
+        "location": "Faro de Cabo de Gata",
+        "date": "2023-07-10",
+        "tags": ["lighthouse", "coast", "architecture", "cabo-de-gata"]
+      },
+      "order": 6,
+      "featured": false
+    },
+    {
+      "id": "cabo-007",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Pueblo Blanco",
+        "en": "White Village",
+        "fr": "Village Blanc"
+      },
+      "description": {
+        "es": "Las casas encaladas típicas de Andalucía",
+        "en": "The typical whitewashed houses of Andalusia",
+        "fr": "Les maisons blanchies à la chaux typiques d'Andalousie"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg",
+        "large": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg",
+        "medium": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg",
+        "small": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg",
+        "thumb": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg",
+        "placeholder": "/assets/images-placeholder/cabo-gata/pueblo-blanco.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/8, 1/250s",
+        "location": "Níjar, Almería",
+        "date": "2023-05-15",
+        "tags": ["village", "white-houses", "architecture", "cabo-de-gata"]
+      },
+      "order": 7,
+      "featured": false
+    },
+    {
+      "id": "portrait-003",
+      "collectionId": "portraits",
+      "title": {
+        "es": "Pescador Local",
+        "en": "Local Fisherman",
+        "fr": "Pêcheur Local"
+      },
+      "description": {
+        "es": "La vida cotidiana en el puerto",
+        "en": "Daily life at the harbor",
+        "fr": "La vie quotidienne au port"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/cabo-gata/pescador-local.jpg",
+        "large": "/assets/images-placeholder/cabo-gata/pescador-local.jpg",
+        "medium": "/assets/images-placeholder/cabo-gata/pescador-local.jpg",
+        "small": "/assets/images-placeholder/cabo-gata/pescador-local.jpg",
+        "thumb": "/assets/images-placeholder/cabo-gata/pescador-local.jpg",
+        "placeholder": "/assets/images-placeholder/cabo-gata/pescador-local.jpg"
+      },
+      "dimensions": {
+        "width": 2400,
+        "height": 3200,
+        "aspectRatio": "3:4"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 85mm f/1.2",
+        "settings": "ISO 200, f/2.8, 1/400s",
+        "location": "La Isleta del Moro, Cabo de Gata",
+        "date": "2023-09-25",
+        "tags": ["portrait", "fisherman", "local", "cabo-de-gata"]
+      },
+      "order": 3,
+      "featured": false
+    },
+    {
+      "id": "cabo-008",
+      "collectionId": "cabo-de-gata",
+      "title": {
+        "es": "Desierto de Tabernas II",
+        "en": "Tabernas Desert II",
+        "fr": "Désert de Tabernas II"
+      },
+      "description": {
+        "es": "Paisaje lunar en el corazón de Almería",
+        "en": "Lunar landscape in the heart of Almería",
+        "fr": "Paysage lunaire au cœur d'Almería"
+      },
+      "files": {
+        "full": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg",
+        "large": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg",
+        "medium": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg",
+        "small": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg",
+        "thumb": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg",
+        "placeholder": "/assets/images-placeholder/cabo-gata/desierto-tabernas.jpg"
+      },
+      "dimensions": {
+        "width": 3200,
+        "height": 2400,
+        "aspectRatio": "4:3"
+      },
+      "metadata": {
+        "camera": "Canon EOS R5",
+        "lens": "RF 24-70mm f/2.8",
+        "settings": "ISO 100, f/11, 1/320s",
+        "location": "Desierto de Tabernas, Almería",
+        "date": "2023-08-10",
+        "tags": ["desert", "landscape", "tabernas", "cabo-de-gata"]
+      },
+      "order": 8,
       "featured": true
     }
   ]
