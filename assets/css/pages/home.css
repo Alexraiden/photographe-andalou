@@ -69,6 +69,98 @@
   color: var(--color-text-tertiary);
 }
 
+/* Gallery Carousel */
+.gallery-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-3xl);
+  overflow: hidden;
+}
+
+.gallery-carousel-track {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.gallery-carousel-item {
+  flex: 0 0 calc((100% - var(--spacing-md) * 2) / 3);
+  min-width: calc((100% - var(--spacing-md) * 2) / 3);
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+}
+
+.gallery-carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow) var(--ease-out);
+}
+
+.gallery-carousel-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Carousel Navigation */
+.gallery-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-medium) var(--ease-out);
+  z-index: 10;
+}
+
+.gallery-carousel-nav:hover {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+}
+
+.gallery-carousel-nav:hover svg {
+  stroke: var(--color-bg-primary);
+}
+
+.gallery-carousel-nav svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--color-text-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gallery-carousel-nav.prev {
+  left: 0;
+}
+
+.gallery-carousel-nav.next {
+  right: 0;
+}
+
+.gallery-carousel-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.gallery-carousel-nav:disabled:hover {
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+.gallery-carousel-nav:disabled:hover svg {
+  stroke: var(--color-text-primary);
+}
+
 
 /* ============================================
    Home Collections Grid
@@ -158,6 +250,25 @@
 
   .home-gallery-header h2 {
     font-size: var(--font-size-lg);
+  }
+
+  .gallery-carousel {
+    padding: 0 var(--spacing-2xl);
+  }
+
+  .gallery-carousel-item {
+    flex: 0 0 calc((100% - var(--spacing-md)) / 2);
+    min-width: calc((100% - var(--spacing-md)) / 2);
+  }
+
+  .gallery-carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-carousel-nav svg {
+    width: 20px;
+    height: 20px;
   }
 
   .home-collections {

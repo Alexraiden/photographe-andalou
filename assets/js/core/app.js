@@ -124,12 +124,11 @@ class App {
           pageData.featuredCollections.includes(c.id)
         );
 
-        // Distribute images across 3 rows for carousel
-        const row1Images = allImages.slice(0, Math.ceil(allImages.length / 3));
-        const row2Images = allImages.slice(Math.ceil(allImages.length / 3), Math.ceil(allImages.length * 2 / 3));
-        const row3Images = allImages.slice(Math.ceil(allImages.length * 2 / 3));
+        // Duplicate images to have more content in carousel (3x)
+        const carouselImages = [...allImages, ...allImages, ...allImages];
 
-        const createCarouselRow = (images) => images.map(img => `
+        // Create carousel items from all images
+        const createCarouselItems = (images) => images.map((img, index) => `
           <div class="gallery-carousel-item">
             <img src="${img.files?.small || img.src || '/assets/images/placeholder.svg'}"
                  alt="${img.title?.[i18n.getCurrentLanguage()] || img.alt || ''}"
@@ -151,19 +150,27 @@ class App {
 
           <section class="home-gallery">
             <div class="gallery-carousel">
-              <div class="gallery-carousel-wrapper">
-                <div class="gallery-carousel-row" data-row="0">${createCarouselRow(row1Images)}</div>
-                <div class="gallery-carousel-row" data-row="1">${createCarouselRow(row2Images)}</div>
-                <div class="gallery-carousel-row" data-row="2">${createCarouselRow(row3Images)}</div>
-              </div>
               <button class="gallery-carousel-nav prev" aria-label="Previous">
                 <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
+              <div class="gallery-carousel-track">
+                ${createCarouselItems(carouselImages)}
+              </div>
               <button class="gallery-carousel-nav next" aria-label="Next">
                 <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
               </button>
             </div>
           </section>
+
+          <div class="lightbox" id="carousel-lightbox">
+            <button class="lightbox-close" aria-label="Fermer"></button>
+            <button class="lightbox-prev" aria-label="Précédent"></button>
+            <div class="lightbox-content">
+              <img class="lightbox-image" src="" alt="">
+            </div>
+            <button class="lightbox-next" aria-label="Suivant"></button>
+            <div class="lightbox-counter"></div>
+          </div>
 
           <section class="home-collections">
             <div class="home-collections-header">
@@ -190,32 +197,161 @@ class App {
 
         // Initialize carousel navigation
         this._initCarousel();
+        this._initLightbox(carouselImages);
       }
 
       _initCarousel() {
         const carousel = document.querySelector('.gallery-carousel');
         if (!carousel) return;
 
-        const rows = carousel.querySelectorAll('.gallery-carousel-row');
+        const track = carousel.querySelector('.gallery-carousel-track');
+        const items = carousel.querySelectorAll('.gallery-carousel-item');
         const prevBtn = carousel.querySelector('.gallery-carousel-nav.prev');
         const nextBtn = carousel.querySelector('.gallery-carousel-nav.next');
-        const scrollAmount = 320;
+
+        if (!track || items.length === 0) return;
+
+        let currentIndex = 0;
+        const visibleItems = window.innerWidth <= 768 ? 2 : 3;
+        const maxIndex = Math.max(0, items.length - visibleItems);
+
+        const updateCarousel = () => {
+          const item = items[0];
+          const itemWidth = item.offsetWidth;
+          const gap = parseInt(getComputedStyle(track).gap) || 16;
+          const offset = currentIndex * (itemWidth + gap);
+          track.style.transform = `translateX(-${offset}px)`;
+          track.style.transition = 'transform 0.4s ease-out';
+
+          // Update button states
+          if (prevBtn) prevBtn.disabled = currentIndex === 0;
+          if (nextBtn) nextBtn.disabled = currentIndex >= maxIndex;
+        };
 
         if (prevBtn) {
           prevBtn.addEventListener('click', () => {
-            rows.forEach(row => {
-              row.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateCarousel();
+            }
           });
         }
 
         if (nextBtn) {
           nextBtn.addEventListener('click', () => {
-            rows.forEach(row => {
-              row.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+              updateCarousel();
+            }
           });
         }
+
+        // Initial state
+        updateCarousel();
+
+        // Auto-scroll
+        let autoScrollInterval = setInterval(() => {
+          if (currentIndex < maxIndex) {
+            currentIndex++;
+          } else {
+            currentIndex = 0;
+          }
+          updateCarousel();
+        }, 3000);
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(autoScrollInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          autoScrollInterval = setInterval(() => {
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+            } else {
+              currentIndex = 0;
+            }
+            updateCarousel();
+          }, 3000);
+        });
+
+        // Update on resize
+        window.addEventListener('resize', () => {
+          const newVisibleItems = window.innerWidth <= 768 ? 2 : 3;
+          const newMaxIndex = Math.max(0, items.length - newVisibleItems);
+          if (currentIndex > newMaxIndex) currentIndex = newMaxIndex;
+          updateCarousel();
+        });
+      }
+
+      _initLightbox(images) {
+        const lightbox = document.getElementById('carousel-lightbox');
+        if (!lightbox) return;
+
+        const lightboxImg = lightbox.querySelector('.lightbox-image');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        const counter = lightbox.querySelector('.lightbox-counter');
+        const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+
+        let currentImageIndex = 0;
+
+        const openLightbox = (index) => {
+          currentImageIndex = index % images.length;
+          updateLightboxImage();
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        };
+
+        const updateLightboxImage = () => {
+          const img = images[currentImageIndex];
+          const src = img.files?.large || img.files?.medium || img.src || '';
+          lightboxImg.classList.remove('loaded');
+          lightboxImg.src = src;
+          lightboxImg.alt = img.title?.[i18n.getCurrentLanguage()] || '';
+          lightboxImg.onload = () => lightboxImg.classList.add('loaded');
+          counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        };
+
+        const showPrev = () => {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          updateLightboxImage();
+        };
+
+        const showNext = () => {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          updateLightboxImage();
+        };
+
+        // Click on carousel images
+        carouselItems.forEach((item, index) => {
+          item.style.cursor = 'pointer';
+          item.addEventListener('click', () => openLightbox(index));
+        });
+
+        // Lightbox controls
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', showPrev);
+        nextBtn.addEventListener('click', showNext);
+
+        // Close on backdrop click
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') showPrev();
+          if (e.key === 'ArrowRight') showNext();
+        });
       }
 
       destroy() {
@@ -483,7 +619,7 @@ class App {
 
       navContainer.innerHTML = `
         <div class="container">
-          <a href="#/" class="logo">Photographe</a>
+          <a href="#/" class="logo"><img src="assets/images-placeholder/logo-PCV-cercle.png" alt="Pedro Carrillo Vicente" class="logo__img"></a>
 
           <!-- Desktop menu -->
           <nav class="nav-menu">

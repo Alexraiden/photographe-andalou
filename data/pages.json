@@ -3,10 +3,10 @@
     "hero": {
       "type": "image",
       "media": {
-        "desktop": "/assets/images/hero/cabo-sunset-2400.svg",
-        "tablet": "/assets/images/hero/cabo-sunset-2400.svg",
-        "mobile": "/assets/images/hero/cabo-sunset-2400.svg",
-        "placeholder": "/assets/images/hero/cabo-sunset-2400.svg",
+        "desktop": "/assets/images-placeholder/hero/hero-cabo-gata.jpg",
+        "tablet": "/assets/images-placeholder/hero/hero-cabo-gata.jpg",
+        "mobile": "/assets/images-placeholder/hero/hero-cabo-gata.jpg",
+        "placeholder": "/assets/images-placeholder/hero/hero-cabo-gata.jpg",
         "alt": "hero.alt"
       },
       "titleKey": "home.hero.title",
@@ -40,7 +40,7 @@
   "cabo": {
     "hero": {
       "type": "fullscreen",
-      "media": "/assets/images/collections/cabo-de-gata/hero.jpg",
+      "media": "/assets/images-placeholder/cabo-gata/playa-monsul.jpg",
       "titleKey": "cabo.hero.title",
       "subtitleKey": "cabo.hero.subtitle"
     },

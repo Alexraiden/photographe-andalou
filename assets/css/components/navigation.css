@@ -15,7 +15,8 @@
   left: 0;
   right: 0;
   z-index: var(--z-navigation);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   transition: background-color var(--transition-medium) var(--ease-out);
 }
 
@@ -44,14 +45,21 @@
    ============================================ */
 
 .navigation .logo {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-light);
-  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: var(--letter-spacing-tight);
   transition: opacity var(--transition-fast) var(--ease-out);
   z-index: calc(var(--z-navigation) + 2);
+}
+
+.navigation .logo__img {
+  height: 42px;
+  width: 42px;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: auto;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .navigation .logo:hover {
@@ -268,8 +276,8 @@
   }
 
   /* Logo smaller on mobile */
-  .navigation .logo {
-    font-size: var(--font-size-md);
+  .navigation .logo__img {
+    height: 34px;
   }
 }
 

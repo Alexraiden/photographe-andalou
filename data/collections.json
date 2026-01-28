@@ -6,8 +6,8 @@
       "nameKey": "collections.cabo.name",
       "descriptionKey": "collections.cabo.description",
       "coverImage": {
-        "src": "/assets/images/collections/cabo-de-gata/cover.svg",
-        "placeholder": "/assets/images/collections/cabo-de-gata/cover.svg",
+        "src": "/assets/images-placeholder/gallery/monsul.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/monsul-sm.jpg",
         "altKey": "collections.cabo.coverAlt"
       },
       "imageCount": 12,
@@ -26,8 +26,8 @@
       "nameKey": "collections.portraits.name",
       "descriptionKey": "collections.portraits.description",
       "coverImage": {
-        "src": "/assets/images/collections/portraits/cover.svg",
-        "placeholder": "/assets/images/collections/portraits/cover.svg",
+        "src": "/assets/images-placeholder/gallery/pescador.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/pescador-sm.jpg",
         "altKey": "collections.portraits.coverAlt"
       },
       "imageCount": 8,
@@ -46,8 +46,8 @@
       "nameKey": "collections.travels.name",
       "descriptionKey": "collections.travels.description",
       "coverImage": {
-        "src": "/assets/images/collections/travels/cover.svg",
-        "placeholder": "/assets/images/collections/travels/cover.svg",
+        "src": "/assets/images-placeholder/gallery/marrakech.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/marrakech-sm.jpg",
         "altKey": "collections.travels.coverAlt"
       },
       "imageCount": 10,
@@ -66,8 +66,8 @@
       "nameKey": "collections.reportages.name",
       "descriptionKey": "collections.reportages.description",
       "coverImage": {
-        "src": "/assets/images/collections/reportages/cover.svg",
-        "placeholder": "/assets/images/collections/reportages/cover.svg",
+        "src": "/assets/images-placeholder/gallery/nijar.jpg",
+        "placeholder": "/assets/images-placeholder/gallery/nijar-sm.jpg",
         "altKey": "collections.reportages.coverAlt"
       },
       "imageCount": 6,
