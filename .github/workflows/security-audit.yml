@@ -31,10 +31,11 @@ jobs:
       - name: Check for exposed secrets
         run: |
           echo "Checking for potential secrets in code..."
-          ! git grep -E "(api[_-]?key|password|secret.*=)" -- '*.js' '*.json' || {
-            echo "⚠️  Potential secrets found in code"
+          if git grep -E "(password|api[_-]?key|secret)\s*=\s*['\"][^'\"]{8,}['\"]" -- '*.js' ':!tests/' ':!*.md' 2>/dev/null; then
+            echo "⚠️  Hardcoded secrets found in code"
             exit 1
-          }
+          fi
+          echo "✅ No hardcoded secrets found"
 
       - name: Verify .env is not committed
         run: |

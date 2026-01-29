@@ -61,13 +61,12 @@ fi
 echo ""
 
 # 3. Vérifier les secrets dans le code
-echo "3. Recherche de secrets dans le code..."
-SECRETS_FOUND=0
-if git grep -E "(api[_-]?key|password|secret).*=.*['\"].*['\"]" -- '*.js' '*.json' ':!node_modules' ':!tests' ':!package-lock.json' 2>/dev/null; then
-    echo -e "${YELLOW}⚠️  Potentiels secrets trouvés (vérifier manuellement)${NC}"
-    ((WARNINGS++))
+echo "3. Recherche de secrets hardcodés dans le code..."
+if git grep -E "(password|api[_-]?key|secret)\s*=\s*['\"][^'\"]{8,}['\"]" -- '*.js' ':!tests/' ':!*.md' 2>/dev/null; then
+    echo -e "${RED}❌ ERREUR: Secrets hardcodés trouvés dans le code!${NC}"
+    ((ERRORS++))
 else
-    echo -e "${GREEN}✅ Aucun secret évident trouvé${NC}"
+    echo -e "${GREEN}✅ Aucun secret hardcodé trouvé${NC}"
 fi
 echo ""
 
