@@ -1,0 +1,28 @@
+{
+  "name": "photographe-andalou",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio & CMS for a photographer based in Cabo de Gata, Andalusia",
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "migrate": "node server/database/migrate.js",
+    "seed": "node server/database/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "file-type": "^19.6.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.5",
+    "uuid": "^10.0.0"
+  }
+}

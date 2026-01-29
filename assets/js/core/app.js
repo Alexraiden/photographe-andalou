@@ -10,6 +10,21 @@ import { router } from './router.js';
 import { i18n } from './i18n.js';
 import { dataService } from '../services/dataService.js';
 
+/**
+ * Resolve multilingual text (compatible with both API and static JSON modes).
+ * API mode:  obj = { es: "...", en: "...", fr: "..." }
+ * JSON mode: key = "collections.cabo.name" → i18n.t(key)
+ */
+function tr(obj, key) {
+  if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
+    const lang = i18n.getCurrentLanguage();
+    if (obj[lang]) return obj[lang];
+    if (obj.es) return obj.es;
+  }
+  if (key) return i18n.t(key);
+  return '';
+}
+
 class App {
   constructor() {
     this.initialized = false;
@@ -44,7 +59,7 @@ class App {
       await this._initGlobalComponents();
 
       // Phase 5 : Démarre le router
-      this._initRouter();
+      await this._initRouter();
 
       // Cache le loader
       this._hideLoader();
@@ -180,11 +195,11 @@ class App {
               ${featuredCollections.map(col => `
                 <a href="#/gallery/${col.slug}" class="collection-card">
                   <div class="collection-card-image">
-                    <img src="${col.coverImage.src}" alt="${i18n.t(col.coverImage.altKey) || col.slug}" class="loaded">
+                    <img src="${col.coverImage.src}" alt="${tr(col.coverImage?.alt, col.coverImage?.altKey) || col.slug}" class="loaded">
                   </div>
                   <div class="collection-card-content">
-                    <h3 class="collection-card-title">${i18n.t(col.nameKey)}</h3>
-                    <p class="collection-card-description">${i18n.t(col.descriptionKey)}</p>
+                    <h3 class="collection-card-title">${tr(col.name, col.nameKey)}</h3>
+                    <p class="collection-card-description">${tr(col.description, col.descriptionKey)}</p>
                     <div class="collection-card-meta">
                       <span class="collection-card-count">${col.imageCount} photos</span>
                     </div>
@@ -377,11 +392,11 @@ class App {
                 ${collections.map(col => `
                   <a href="#/gallery/${col.slug}" class="collection-card">
                     <div class="collection-card-image">
-                      <img src="${col.coverImage.src}" alt="${i18n.t(col.coverImage.altKey) || col.slug}" class="loaded">
+                      <img src="${col.coverImage.src}" alt="${tr(col.coverImage?.alt, col.coverImage?.altKey) || col.slug}" class="loaded">
                     </div>
                     <div class="collection-card-content">
-                      <h3 class="collection-card-title">${i18n.t(col.nameKey) || col.slug}</h3>
-                      <p class="collection-card-description">${i18n.t(col.descriptionKey) || ''}</p>
+                      <h3 class="collection-card-title">${tr(col.name, col.nameKey) || col.slug}</h3>
+                      <p class="collection-card-description">${tr(col.description, col.descriptionKey) || ''}</p>
                       <div class="collection-card-meta">
                         <span class="collection-card-count">${col.imageCount} photos</span>
                         <span class="collection-card-link">Voir →</span>
@@ -423,9 +438,9 @@ class App {
         appRoot.innerHTML = `
           <div class="container section" style="margin-top: calc(var(--nav-height) + var(--spacing-xl));">
             <a href="#/gallery" class="text-accent mb-md block">← Retour</a>
-            <h1 class="display-1 mb-md">${i18n.t(collection.nameKey)}</h1>
-            <p class="text-lead mb-lg">${i18n.t(collection.descriptionKey)}</p>
-            <p class="text-small text-tertiary mb-xl">${images.length} photos • ${collection.metadata.location}</p>
+            <h1 class="display-1 mb-md">${tr(collection.name, collection.nameKey)}</h1>
+            <p class="text-lead mb-lg">${tr(collection.description, collection.descriptionKey)}</p>
+            <p class="text-small text-tertiary mb-xl">${images.length} photos • ${collection.metadata?.location || ''}</p>
 
             <div class="gallery gallery-${collection.layout}">
               ${images.map(img => `
@@ -439,7 +454,88 @@ class App {
               `).join('')}
             </div>
           </div>
+
+          <div class="lightbox" id="gallery-lightbox">
+            <button class="lightbox-close" aria-label="Fermer"></button>
+            <button class="lightbox-prev" aria-label="Précédent"></button>
+            <div class="lightbox-content">
+              <img class="lightbox-image" src="" alt="">
+            </div>
+            <button class="lightbox-next" aria-label="Suivant"></button>
+            <div class="lightbox-counter"></div>
+          </div>
         `;
+
+        this._initLightbox(images);
+      }
+
+      _initLightbox(images) {
+        const lightbox = document.getElementById('gallery-lightbox');
+        if (!lightbox) return;
+
+        const lightboxImg = lightbox.querySelector('.lightbox-image');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        const counter = lightbox.querySelector('.lightbox-counter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        let currentImageIndex = 0;
+
+        const openLightbox = (index) => {
+          currentImageIndex = index;
+          updateLightboxImage();
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        };
+
+        const updateLightboxImage = () => {
+          const img = images[currentImageIndex];
+          const src = img.files?.large || img.files?.medium || img.files?.small || '';
+          lightboxImg.classList.remove('loaded');
+          lightboxImg.src = src;
+          lightboxImg.alt = img.title?.[i18n.getCurrentLanguage()] || '';
+          lightboxImg.onload = () => lightboxImg.classList.add('loaded');
+          counter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+        };
+
+        const showPrev = () => {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          updateLightboxImage();
+        };
+
+        const showNext = () => {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          updateLightboxImage();
+        };
+
+        // Click on gallery images
+        galleryItems.forEach((item, index) => {
+          item.addEventListener('click', () => openLightbox(index));
+        });
+
+        // Lightbox controls
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', showPrev);
+        nextBtn.addEventListener('click', showNext);
+
+        // Close on backdrop click
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') showPrev();
+          if (e.key === 'ArrowRight') showNext();
+        });
       }
 
       destroy() {}
@@ -602,6 +698,17 @@ class App {
       destroy() {}
     });
 
+    // Admin routes (lazy loaded)
+    // Store promise so router init can await it for admin routes
+    this._adminRoutesReady = import('../admin/adminApp.js')
+      .then(({ registerAdminRoutes }) => {
+        registerAdminRoutes(router);
+        console.log('[App] Admin routes registered');
+      })
+      .catch(err => {
+        console.warn('[App] Admin module not loaded:', err.message);
+      });
+
     console.log(`[App] Registered ${router.getAllRoutes().length} routes`);
   }
 
@@ -756,8 +863,14 @@ class App {
    * Initialise le router
    * @private
    */
-  _initRouter() {
+  async _initRouter() {
     console.log('[App] Initializing router...');
+
+    // Wait for admin routes before starting the router if initial route is admin
+    const initialPath = window.location.hash.slice(1) || '/';
+    if (initialPath.startsWith('/admin') && this._adminRoutesReady) {
+      await this._adminRoutesReady;
+    }
 
     // Hook avant navigation : ferme le menu mobile si ouvert
     router.setBeforeNavigate((newRoute, oldRoute) => {
