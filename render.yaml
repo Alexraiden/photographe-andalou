@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: photographe-andalou
+    env: node
+    buildCommand: npm install && npm run setup
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: UPLOAD_MAX_SIZE
+        value: 10485760
