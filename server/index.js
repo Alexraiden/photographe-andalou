@@ -60,9 +60,15 @@ app.get('*', (req, res) => {
 // Error handler (must be last)
 app.use(errorHandler);
 
-app.listen(config.port, () => {
-  console.log(`Server running on http://localhost:${config.port}`);
-  if (config.isDev) {
-    console.log('Development mode enabled');
-  }
-});
+// Export app for testing
+export { app };
+
+// Only start server if not in test mode
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(config.port, () => {
+    console.log(`Server running on http://localhost:${config.port}`);
+    if (config.isDev) {
+      console.log('Development mode enabled');
+    }
+  });
+}

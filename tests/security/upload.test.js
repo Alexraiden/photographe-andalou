@@ -1,6 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import request from 'supertest';
-import { app } from '../../server/index.js';
 
 /**
  * Tests de sécurité upload de fichiers
