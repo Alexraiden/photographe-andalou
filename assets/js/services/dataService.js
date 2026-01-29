@@ -11,8 +11,8 @@
 class DataService {
   constructor() {
     // Base URL pour les données
-    // En production avec CMS : this.baseUrl = '/api'
-    this.baseUrl = '/data';
+    // '/data' = fichiers JSON statiques, '/api/public' = API serveur (SQLite)
+    this.baseUrl = '/api/public';
 
     // Cache en mémoire pour éviter les requêtes multiples
     this.cache = new Map();
@@ -49,7 +49,10 @@ class DataService {
         console.log(`[DataService] Fetching: ${endpoint}`);
       }
 
-      const url = `${this.baseUrl}/${endpoint}.json`;
+      // API mode: no .json extension; static mode: append .json
+      const url = this.baseUrl.startsWith('/api')
+        ? `${this.baseUrl}/${endpoint}`
+        : `${this.baseUrl}/${endpoint}.json`;
 
       // Headers avec auth token si présent
       const headers = { ...this.headers };
