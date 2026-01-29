@@ -34,3 +34,8 @@ export function closeDb() {
     db = null;
   }
 }
+
+// Test helper to inject database for tests
+export function setTestDb(testDb) {
+  db = testDb;
+}
