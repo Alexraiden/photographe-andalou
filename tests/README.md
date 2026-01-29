@@ -24,6 +24,17 @@ tests/
         └── collections.test.js
 ```
 
+## Configuration
+
+### Variables d'Environnement
+
+Les tests utilisent [.env.test](../.env.test) qui contient :
+- `JWT_SECRET` : Clé de test (non sensible)
+- `NODE_ENV=test`
+- `DB_PATH=:memory:` : Base SQLite en mémoire
+
+Ce fichier est **commité** (contrairement à `.env`) pour permettre à GitHub Actions de fonctionner.
+
 ## Commandes
 
 ```bash
