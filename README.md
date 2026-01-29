@@ -1,5 +1,7 @@
 # Photographe Andalou - Site Vitrine Immersif
 
+![Tests](https://github.com/VOTRE_USERNAME/photographe-andalou/actions/workflows/test.yml/badge.svg)
+
 Site web vitrine pour photographe basé en Andalousie (Cabo de Gata), créé avec une architecture moderne, performante et CMS-ready.
 
 ## 🎯 Caractéristiques
