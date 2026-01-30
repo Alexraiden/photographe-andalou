@@ -1,7 +1,13 @@
 import 'dotenv/config';
 
+// Parse PORT with fallback to 3000 if invalid
+const parsePort = (value) => {
+  const port = parseInt(value);
+  return !isNaN(port) && port > 0 && port < 65536 ? port : 3000;
+};
+
 export const config = {
-  port: parseInt(process.env.PORT || '3000'),
+  port: parsePort(process.env.PORT || '3000'),
   isDev: process.env.NODE_ENV !== 'production',
   baseUrl: process.env.BASE_URL || 'http://localhost:3000',
 
