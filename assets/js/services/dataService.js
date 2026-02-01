@@ -12,7 +12,8 @@ class DataService {
   constructor() {
     // Base URL pour les données
     // '/data' = fichiers JSON statiques, '/api/public' = API serveur (SQLite)
-    this.baseUrl = '/api/public';
+    // Auto-détection : si backend Express tourne (port 3000+), utiliser /api/public, sinon /data
+    this.baseUrl = this._detectBaseUrl();
 
     // Cache en mémoire pour éviter les requêtes multiples
     this.cache = new Map();
@@ -27,6 +28,20 @@ class DataService {
 
     // Debug mode
     this.debug = false;
+  }
+
+  /**
+   * Détecte l'URL de base selon l'environnement
+   * @private
+   * @returns {string} URL de base
+   */
+  _detectBaseUrl() {
+    // Si on est sur localhost avec un port bas (< 9000), c'est probablement Python HTTP server
+    // Utiliser /data pour les fichiers JSON statiques
+    const port = parseInt(window.location.port, 10);
+    const isStaticServer = window.location.hostname === 'localhost' && port > 0 && port < 9000;
+
+    return isStaticServer ? '/data' : '/api/public';
   }
 
   /**
