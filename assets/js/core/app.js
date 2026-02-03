@@ -163,33 +163,31 @@ class App {
             </div>
           </div>
 
-          <section class="home-gallery">
-            <div class="gallery-carousel">
-              <button class="gallery-carousel-nav prev" aria-label="Previous">
-                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-              </button>
-              <div class="gallery-carousel-track">
-                ${createCarouselItems(carouselImages)}
-              </div>
-              <button class="gallery-carousel-nav next" aria-label="Next">
-                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-              </button>
+          <section class="home-quote">
+            <div class="home-quote-content">
+              <blockquote class="home-quote-text">
+                <span class="quote-mark">"</span>
+                El fotógrafo tiene que saber llorar y reír en décimas de segundo
+                <span class="quote-mark">"</span>
+              </blockquote>
             </div>
           </section>
 
-          <div class="lightbox" id="carousel-lightbox">
-            <button class="lightbox-close" aria-label="Fermer"></button>
-            <button class="lightbox-prev" aria-label="Précédent"></button>
-            <div class="lightbox-content">
-              <img class="lightbox-image" src="" alt="">
+          <section class="home-about">
+            <div class="home-about-content">
+              <div class="home-about-text">
+                <h2>${i18n.t('home.about.heading')}</h2>
+                ${i18n.t('home.about.text').split('\n\n').map(p => `<p>${p}</p>`).join('')}
+              </div>
+              <div class="home-about-image">
+                <img src="/assets/images-placeholder/fotografo.jpeg" alt="${i18n.t('home.hero.title')}" loading="lazy">
+              </div>
             </div>
-            <button class="lightbox-next" aria-label="Suivant"></button>
-            <div class="lightbox-counter"></div>
-          </div>
+          </section>
 
           <section class="home-collections">
             <div class="home-collections-header">
-              <h2>Collections</h2>
+              <h2>${i18n.t('common.collections')}</h2>
             </div>
             <div class="cards-grid cols-3">
               ${featuredCollections.map(col => `
@@ -201,13 +199,37 @@ class App {
                     <h3 class="collection-card-title">${tr(col.name, col.nameKey)}</h3>
                     <p class="collection-card-description">${tr(col.description, col.descriptionKey)}</p>
                     <div class="collection-card-meta">
-                      <span class="collection-card-count">${col.imageCount} photos</span>
+                      <span class="collection-card-count">${col.imageCount} ${i18n.t('common.photos')}</span>
                     </div>
                   </div>
                 </a>
               `).join('')}
             </div>
           </section>
+
+          <section class="home-gallery">
+            <div class="gallery-carousel">
+              <button class="gallery-carousel-nav prev" aria-label="${i18n.t('common.previous')}">
+                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <div class="gallery-carousel-track">
+                ${createCarouselItems(carouselImages)}
+              </div>
+              <button class="gallery-carousel-nav next" aria-label="${i18n.t('common.next')}">
+                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </section>
+
+          <div class="lightbox" id="carousel-lightbox">
+            <button class="lightbox-close" aria-label="${i18n.t('common.close')}"></button>
+            <button class="lightbox-prev" aria-label="${i18n.t('common.previous')}"></button>
+            <div class="lightbox-content">
+              <img class="lightbox-image" src="" alt="">
+            </div>
+            <button class="lightbox-next" aria-label="${i18n.t('common.next')}"></button>
+            <div class="lightbox-counter"></div>
+          </div>
         `;
 
         // Initialize carousel navigation
@@ -398,8 +420,8 @@ class App {
                       <h3 class="collection-card-title">${tr(col.name, col.nameKey) || col.slug}</h3>
                       <p class="collection-card-description">${tr(col.description, col.descriptionKey) || ''}</p>
                       <div class="collection-card-meta">
-                        <span class="collection-card-count">${col.imageCount} photos</span>
-                        <span class="collection-card-link">Voir →</span>
+                        <span class="collection-card-count">${col.imageCount} ${i18n.t('common.photos')}</span>
+                        <span class="collection-card-link">${i18n.t('common.view')} →</span>
                       </div>
                     </div>
                   </a>
@@ -437,10 +459,10 @@ class App {
 
         appRoot.innerHTML = `
           <div class="container section" style="margin-top: calc(var(--nav-height) + var(--spacing-xl));">
-            <a href="#/gallery" class="text-accent mb-md block">← Retour</a>
+            <a href="#/gallery" class="text-accent mb-md block">← ${i18n.t('common.back')}</a>
             <h1 class="display-1 mb-md">${tr(collection.name, collection.nameKey)}</h1>
             <p class="text-lead mb-lg">${tr(collection.description, collection.descriptionKey)}</p>
-            <p class="text-small text-tertiary mb-xl">${images.length} photos • ${collection.metadata?.location || ''}</p>
+            <p class="text-small text-tertiary mb-xl">${images.length} ${i18n.t('common.photos')} • ${collection.metadata?.location || ''}</p>
 
             <div class="gallery gallery-${collection.layout}">
               ${images.map(img => `
@@ -456,12 +478,12 @@ class App {
           </div>
 
           <div class="lightbox" id="gallery-lightbox">
-            <button class="lightbox-close" aria-label="Fermer"></button>
-            <button class="lightbox-prev" aria-label="Précédent"></button>
+            <button class="lightbox-close" aria-label="${i18n.t('common.close')}"></button>
+            <button class="lightbox-prev" aria-label="${i18n.t('common.previous')}"></button>
             <div class="lightbox-content">
               <img class="lightbox-image" src="" alt="">
             </div>
-            <button class="lightbox-next" aria-label="Suivant"></button>
+            <button class="lightbox-next" aria-label="${i18n.t('common.next')}"></button>
             <div class="lightbox-counter"></div>
           </div>
         `;
@@ -548,64 +570,27 @@ class App {
         appRoot.innerHTML = `
           <div class="page cabo-page">
             <header class="page-header">
-              <h1 class="page-title">Cabo de Gata – Níjar</h1>
-              <p class="page-intro">Un territoire où le désert rencontre la mer, où la lumière sculpte les volcans endormis.</p>
+              <h1 class="page-title">${i18n.t('cabo.hero.title')}</h1>
+              <p class="page-intro">${i18n.t('cabo.intro')}</p>
             </header>
 
             <main class="page-body">
               <section class="story-section">
-                <h2>La Terre Brûlée</h2>
-                <p>Le Parc Naturel de Cabo de Gata est le seul désert d'Europe. Ici, la roche volcanique affleure sous un soleil implacable. Les paysages lunaires s'étendent à perte de vue, ponctués de figuiers de Barbarie et d'agaves centenaires.</p>
-                <p>Cette aridité fascinante contraste avec l'azur profond de la Méditerranée. Entre ces deux extrêmes, la vie s'accroche avec une beauté fragile.</p>
+                <h2>${i18n.t('cabo.story.burned_earth.heading')}</h2>
+                <p>${i18n.t('cabo.story.burned_earth.p1')}</p>
+                <p>${i18n.t('cabo.story.burned_earth.p2')}</p>
               </section>
 
               <section class="story-section">
-                <h2>Villages Blancs</h2>
-                <p>Las Negras, San José, La Isleta del Moro... Ces villages de pêcheurs semblent suspendus hors du temps. Leurs maisons blanches éclatent sous la lumière andalouse, leurs ruelles étroites gardent la fraîcheur des siestes d'été.</p>
-                <p>Ici, le rythme est celui des marées et des saisons. La vie se déroule au ralenti, dans une harmonie avec l'environnement que peu d'endroits ont su préserver.</p>
+                <h2>${i18n.t('cabo.story.white_villages.heading')}</h2>
+                <p>${i18n.t('cabo.story.white_villages.p1')}</p>
+                <p>${i18n.t('cabo.story.white_villages.p2')}</p>
               </section>
 
               <section class="story-section">
-                <h2>La Lumière du Sud</h2>
-                <p>C'est la lumière qui m'a capturé. Cette lumière méditerranéenne si particulière, dorée au lever du jour, aveuglante à midi, rose et pourpre au crépuscule. Elle transforme chaque pierre, chaque vague, chaque visage en une œuvre éphémère.</p>
-                <p>Photographier Cabo de Gata, c'est capturer l'essence même du Sud : la chaleur, le silence, la beauté brute d'une terre qui résiste.</p>
-              </section>
-            </main>
-          </div>
-        `;
-      }
-
-      destroy() {}
-    });
-
-    // Page À propos
-    router.register('/about', class AboutPage {
-      async init() {
-        const appRoot = document.getElementById('app-root');
-        appRoot.innerHTML = `
-          <div class="page about-page">
-            <header class="page-header">
-              <h1 class="page-title">${i18n.t('nav.about') || 'À propos'}</h1>
-              <p class="page-intro">Photographe basé en Andalousie, mon travail explore la relation entre l'humain et le territoire.</p>
-            </header>
-
-            <main class="page-body">
-              <section class="content-section">
-                <h2>Une Fascination pour le Sud</h2>
-                <p>Arrivé en Andalousie il y a dix ans, j'ai été immédiatement captivé par cette terre de contrastes. La Sierra Nevada enneigée qui domine les plages tropicales, les villages blancs accrochés aux falaises, le désert de Cabo de Gata qui plonge dans la Méditerranée.</p>
-                <p>Ma photographie cherche à saisir cette essence andalouse : une lumière unique, des paysages extrêmes, et surtout, une culture vivante ancrée dans son environnement.</p>
-              </section>
-
-              <section class="content-section">
-                <h2>Approche Photographique</h2>
-                <p>Je privilégie la patience et l'immersion. Plutôt que de parcourir rapidement les lieux, je choisis d'y revenir, encore et encore, à différentes saisons, différentes heures du jour. C'est dans cette répétition que naît l'intimité avec un territoire.</p>
-                <p>Mon approche mêle documentaire et poésie visuelle. Je cherche autant à témoigner de la réalité d'un lieu qu'à en révéler la dimension émotionnelle et sensorielle.</p>
-              </section>
-
-              <section class="content-section">
-                <h2>Projets en Cours</h2>
-                <p>Actuellement, je travaille sur un projet au long cours autour du Parc Naturel de Cabo de Gata-Níjar. Cette série documente la vie des derniers pêcheurs artisanaux et l'évolution d'un territoire face aux défis climatiques et touristiques.</p>
-                <p>Parallèlement, je poursuis mon travail de portrait des habitants de la province d'Almería, cherchant à capter la diversité et la richesse humaine de cette région souvent méconnue.</p>
+                <h2>${i18n.t('cabo.story.southern_light.heading')}</h2>
+                <p>${i18n.t('cabo.story.southern_light.p1')}</p>
+                <p>${i18n.t('cabo.story.southern_light.p2')}</p>
               </section>
             </main>
           </div>
@@ -733,7 +718,6 @@ class App {
             <a href="#/">${i18n.t('nav.home')}</a>
             <a href="#/gallery">${i18n.t('nav.gallery')}</a>
             <a href="#/cabo-de-gata">${i18n.t('nav.cabo')}</a>
-            <a href="#/about">${i18n.t('nav.about')}</a>
             <a href="#/contact">${i18n.t('nav.contact')}</a>
           </nav>
 
@@ -758,7 +742,6 @@ class App {
             <a href="#/">${i18n.t('nav.home')}</a>
             <a href="#/gallery">${i18n.t('nav.gallery')}</a>
             <a href="#/cabo-de-gata">${i18n.t('nav.cabo')}</a>
-            <a href="#/about">${i18n.t('nav.about')}</a>
             <a href="#/contact">${i18n.t('nav.contact')}</a>
           </nav>
         </div>
@@ -777,13 +760,19 @@ class App {
       footerContainer.innerHTML = `
         <div class="footer-content">
           <div class="footer-main">
-            <div class="footer-logo">Photographe Andalou</div>
+            <div class="footer-logo">${i18n.t('footer.name')}</div>
             <div class="footer-social">
-              <a href="https://instagram.com/photographer_andalou" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://instagram.com/pedrocarrillovicente" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://facebook.com/aqaba.fotografia" target="_blank" rel="noopener">Facebook</a>
             </div>
           </div>
+          <div class="footer-center">
+            <a href="#/" class="footer-logo-link">
+              <img src="/assets/images-placeholder/logo-PCV-cercle.png" alt="${i18n.t('footer.name')}" class="footer-logo-img">
+            </a>
+          </div>
           <div class="footer-bottom">
-            <p>© ${new Date().getFullYear()} Photographe Andalou. ${i18n.t('footer.rights')}</p>
+            <p>© ${new Date().getFullYear()} ${i18n.t('footer.name')}. ${i18n.t('footer.rights')}</p>
           </div>
         </div>
       `;
@@ -922,6 +911,10 @@ class App {
     const loader = document.querySelector('.loader');
     if (loader) {
       loader.style.display = 'flex';
+      const loaderText = loader.querySelector('p');
+      if (loaderText && i18n.getCurrentLanguage) {
+        loaderText.textContent = i18n.t('common.loading');
+      }
     }
   }
 

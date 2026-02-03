@@ -8,13 +8,17 @@
   },
   "home": {
     "hero": {
-      "title": "Andalusian Light",
-      "subtitle": "Photography from the edge of Europe",
+      "title": "Pedro Carrillo Vicente",
+      "subtitle": "Photografer, Carboneras, Almeria",
       "cta": "Explore"
     },
     "intro": {
       "heading": "Stories in Light",
       "text": "Capturing the essence of Cabo de Gata and beyond through landscapes, portraits, and the daily life of people and places inhabiting this volcanic territory between desert and sea."
+    },
+    "about": {
+      "heading": "Between Sea and Land",
+      "text": "Born in Carboneras, my relationship with photography was born among the volcanic rocks of Cabo de Gata and the deep blue of the Mediterranean. This arid land, where the desert embraces the sea, taught me to see beauty in the essential, in the light that transforms the landscape at every hour of the day.\n\nBut my camera doesn't stay still. In every journey, in every corner of the world I explore, I seek those fleeting moments that tell stories: a face, a gaze, the light of a sunset on an unknown street. I carry with me the vision I learned here, in my homeland, and apply it to every person and place I encounter.\n\nPhotography is my way of connecting with the world, of capturing the essence of places and the souls that inhabit them."
     }
   },
   "collections": {
@@ -44,6 +48,7 @@
       "title": "Cabo de Gata - Níjar",
       "subtitle": "A volcanic desert at the edge of the Mediterranean"
     },
+    "intro": "A territory where desert meets sea, where light sculpts dormant volcanoes.",
     "story": {
       "light": {
         "heading": "The Light",
@@ -56,6 +61,21 @@
       "sea": {
         "heading": "The Sea",
         "content": "The clearest waters of the Spanish Mediterranean. Hidden coves between volcanic cliffs, where deep blue contrasts with desert ochre. A meeting of extremes."
+      },
+      "burned_earth": {
+        "heading": "The Scorched Land",
+        "p1": "Cabo de Gata Natural Park is Europe's only desert. Here, volcanic rock emerges under a relentless sun. Lunar landscapes stretch as far as the eye can see, punctuated by prickly pears and century-old agaves.",
+        "p2": "This fascinating aridity contrasts with the deep azure of the Mediterranean. Between these two extremes, life clings with a fragile beauty."
+      },
+      "white_villages": {
+        "heading": "White Villages",
+        "p1": "Las Negras, San José, La Isleta del Moro... These fishing villages seem suspended outside of time. Their white houses shine under the Andalusian light, their narrow streets preserve the coolness of summer siestas.",
+        "p2": "Here, the rhythm is that of tides and seasons. Life unfolds slowly, in harmony with an environment that few places have managed to preserve."
+      },
+      "southern_light": {
+        "heading": "Southern Light",
+        "p1": "It's the light that captured me. This particular Mediterranean light, golden at dawn, blinding at noon, pink and purple at dusk. It transforms every stone, every wave, every face into an ephemeral work of art.",
+        "p2": "Photographing Cabo de Gata is capturing the very essence of the South: the heat, the silence, the raw beauty of a land that endures."
       }
     }
   },
@@ -84,6 +104,7 @@
     }
   },
   "footer": {
+    "name": "Andalusian Photographer",
     "instagram": "Follow on Instagram",
     "rights": "All rights reserved"
   },
@@ -93,6 +114,10 @@
     "viewMore": "View more",
     "close": "Close",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "collections": "Collections",
+    "photos": "photos",
+    "view": "View",
+    "back": "Back"
   }
 }

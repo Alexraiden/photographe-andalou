@@ -15,6 +15,10 @@
     "intro": {
       "heading": "Historias de Luz",
       "text": "Capturando la esencia de Cabo de Gata y más allá, a través de paisajes, retratos y la vida cotidiana de personas y lugares que habitan este territorio volcánico entre el desierto y el mar."
+    },
+    "about": {
+      "heading": "Entre Mar y Tierra",
+      "text": "Nacido en Carboneras, mi relación con la fotografía nació entre las rocas volcánicas de Cabo de Gata y el azul profundo del Mediterráneo. Esta tierra árida, donde el desierto abraza el mar, me enseñó a ver la belleza en lo esencial, en la luz que transforma el paisaje a cada hora del día.\n\nPero mi cámara no se queda quieta. En cada viaje, en cada rincón del mundo que exploro, busco esos momentos fugaces que cuentan historias: un rostro, una mirada, la luz de un atardecer sobre una calle desconocida. Llevo conmigo la mirada que aprendí aquí, en mi tierra, y la aplico a cada persona y lugar que encuentro.\n\nLa fotografía es mi manera de conectar con el mundo, de capturar la esencia de los lugares y las almas que los habitan."
     }
   },
   "collections": {
@@ -44,6 +48,7 @@
       "title": "Cabo de Gata - Níjar",
       "subtitle": "Un desierto volcánico en el borde del Mediterráneo"
     },
+    "intro": "Un territorio donde el desierto encuentra el mar, donde la luz esculpe los volcanes dormidos.",
     "story": {
       "light": {
         "heading": "La Luz",
@@ -56,6 +61,21 @@
       "sea": {
         "heading": "El Mar",
         "content": "Las aguas más cristalinas del Mediterráneo español. Calas escondidas entre acantilados volcánicos, donde el azul profundo contrasta con el ocre del desierto. Un encuentro de extremos."
+      },
+      "burned_earth": {
+        "heading": "La Tierra Quemada",
+        "p1": "El Parque Natural de Cabo de Gata es el único desierto de Europa. Aquí, la roca volcánica aflora bajo un sol implacable. Los paisajes lunares se extienden hasta donde alcanza la vista, salpicados de chumberas y agaves centenarios.",
+        "p2": "Esta aridez fascinante contrasta con el azul profundo del Mediterráneo. Entre estos dos extremos, la vida se aferra con una belleza frágil."
+      },
+      "white_villages": {
+        "heading": "Pueblos Blancos",
+        "p1": "Las Negras, San José, La Isleta del Moro... Estos pueblos de pescadores parecen suspendidos fuera del tiempo. Sus casas blancas brillan bajo la luz andaluza, sus calles estrechas guardan el frescor de las siestas de verano.",
+        "p2": "Aquí, el ritmo es el de las mareas y las estaciones. La vida transcurre con calma, en armonía con el entorno que pocos lugares han sabido preservar."
+      },
+      "southern_light": {
+        "heading": "La Luz del Sur",
+        "p1": "Es la luz la que me capturó. Esta luz mediterránea tan especial, dorada al amanecer, cegadora al mediodía, rosa y púrpura al atardecer. Transforma cada piedra, cada ola, cada rostro en una obra efímera.",
+        "p2": "Fotografiar Cabo de Gata es capturar la esencia misma del Sur: el calor, el silencio, la belleza cruda de una tierra que resiste."
       }
     }
   },
@@ -84,6 +104,7 @@
     }
   },
   "footer": {
+    "name": "Fotógrafo Andaluz",
     "instagram": "Sígueme en Instagram",
     "rights": "Todos los derechos reservados"
   },
@@ -93,6 +114,10 @@
     "viewMore": "Ver más",
     "close": "Cerrar",
     "previous": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "collections": "Colecciones",
+    "photos": "fotos",
+    "view": "Ver",
+    "back": "Volver"
   }
 }

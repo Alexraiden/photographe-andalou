@@ -121,3 +121,7 @@ php -S localhost:8000
 ## Output Rules
 - Prefer functions or snippets instead of full files.
 - If returning code, return only modified sections.
+
+## Git Commits
+- NEVER add `Co-Authored-By: Claude` lines to commit messages.
+- Keep commit messages clean and author-only.

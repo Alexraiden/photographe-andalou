@@ -8,13 +8,17 @@
   },
   "home": {
     "hero": {
-      "title": "Lumière Andalouse",
-      "subtitle": "Photographie depuis le bout de l'Europe",
+      "title": "Pedro Carrillo Vicente",
+      "subtitle": "Photographe, Carboneras, Almeria",
       "cta": "Explorer"
     },
     "intro": {
       "heading": "Histoires de Lumière",
       "text": "Capturer l'essence de Cabo de Gata et au-delà à travers paysages, portraits et la vie quotidienne des personnes et lieux habitant ce territoire volcanique entre désert et mer."
+    },
+    "about": {
+      "heading": "Entre Mer et Terre",
+      "text": "Né à Carboneras, ma relation avec la photographie est née entre les roches volcaniques de Cabo de Gata et le bleu profond de la Méditerranée. Cette terre aride, où le désert embrasse la mer, m'a appris à voir la beauté dans l'essentiel, dans la lumière qui transforme le paysage à chaque heure du jour.\n\nMais mon appareil ne reste pas immobile. Dans chaque voyage, dans chaque coin du monde que j'explore, je cherche ces moments fugaces qui racontent des histoires : un visage, un regard, la lumière d'un coucher de soleil sur une rue inconnue. Je porte avec moi le regard que j'ai appris ici, sur ma terre, et je l'applique à chaque personne et lieu que je rencontre.\n\nLa photographie est ma manière de me connecter au monde, de capturer l'essence des lieux et des âmes qui les habitent."
     }
   },
   "collections": {
@@ -44,6 +48,7 @@
       "title": "Cabo de Gata - Níjar",
       "subtitle": "Un désert volcanique au bord de la Méditerranée"
     },
+    "intro": "Un territoire où le désert rencontre la mer, où la lumière sculpte les volcans endormis.",
     "story": {
       "light": {
         "heading": "La Lumière",
@@ -56,6 +61,21 @@
       "sea": {
         "heading": "La Mer",
         "content": "Les eaux les plus cristallines de la Méditerranée espagnole. Criques cachées entre falaises volcaniques, où le bleu profond contraste avec l'ocre du désert. Une rencontre d'extrêmes."
+      },
+      "burned_earth": {
+        "heading": "La Terre Brûlée",
+        "p1": "Le Parc Naturel de Cabo de Gata est le seul désert d'Europe. Ici, la roche volcanique affleure sous un soleil implacable. Les paysages lunaires s'étendent à perte de vue, ponctués de figuiers de Barbarie et d'agaves centenaires.",
+        "p2": "Cette aridité fascinante contraste avec l'azur profond de la Méditerranée. Entre ces deux extrêmes, la vie s'accroche avec une beauté fragile."
+      },
+      "white_villages": {
+        "heading": "Villages Blancs",
+        "p1": "Las Negras, San José, La Isleta del Moro... Ces villages de pêcheurs semblent suspendus hors du temps. Leurs maisons blanches éclatent sous la lumière andalouse, leurs ruelles étroites gardent la fraîcheur des siestes d'été.",
+        "p2": "Ici, le rythme est celui des marées et des saisons. La vie se déroule au ralenti, dans une harmonie avec l'environnement que peu d'endroits ont su préserver."
+      },
+      "southern_light": {
+        "heading": "La Lumière du Sud",
+        "p1": "C'est la lumière qui m'a capturé. Cette lumière méditerranéenne si particulière, dorée au lever du jour, aveuglante à midi, rose et pourpre au crépuscule. Elle transforme chaque pierre, chaque vague, chaque visage en une œuvre éphémère.",
+        "p2": "Photographier Cabo de Gata, c'est capturer l'essence même du Sud : la chaleur, le silence, la beauté brute d'une terre qui résiste."
       }
     }
   },
@@ -84,6 +104,7 @@
     }
   },
   "footer": {
+    "name": "Photographe Andalou",
     "instagram": "Suivre sur Instagram",
     "rights": "Tous droits réservés"
   },
@@ -93,6 +114,10 @@
     "viewMore": "Voir plus",
     "close": "Fermer",
     "previous": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "collections": "Collections",
+    "photos": "photos",
+    "view": "Voir",
+    "back": "Retour"
   }
 }
