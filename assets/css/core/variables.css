@@ -54,9 +54,9 @@
   --font-mono: 'JetBrains Mono', 'Monaco', monospace;
 
   /* Font Sizes - Échelle harmonique */
-  --font-size-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);      /* 11-13px */
-  --font-size-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);      /* 13-14px */
-  --font-size-base: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);      /* 14-16px */
+  --font-size-xs: clamp(0.8125rem, 0.75rem + 0.25vw, 0.875rem);    /* 13-14px */
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.25vw, 0.9375rem);     /* 14-15px */
+  --font-size-base: clamp(1rem, 0.9rem + 0.25vw, 1.0625rem);       /* 16-17px */
   --font-size-md: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);         /* 16-20px */
   --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);     /* 20-28px */
   --font-size-xl: clamp(1.75rem, 1.4rem + 1.75vw, 3rem);        /* 28-48px */
@@ -179,7 +179,7 @@
 
   /* Navigation */
   --nav-height: 56px;
-  --nav-height-mobile: 48px;
+  --nav-height-mobile: 64px;
 
   /* Hero */
   --hero-min-height: 70vh;

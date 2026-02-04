@@ -698,6 +698,17 @@ class App {
   }
 
   /**
+   * Met à jour le texte du dropdown de langue mobile
+   * @private
+   */
+  _updateMobileLangDisplay() {
+    const currentLangCode = document.querySelector('.current-lang-code');
+    if (currentLangCode) {
+      currentLangCode.textContent = i18n.getCurrentLanguage().toUpperCase();
+    }
+  }
+
+  /**
    * Initialise les composants globaux (navigation, footer)
    * @private
    */
@@ -726,6 +737,18 @@ class App {
             <button data-lang="es" class="${currentLang === 'es' ? 'active' : ''}">ES</button>
             <button data-lang="en" class="${currentLang === 'en' ? 'active' : ''}">EN</button>
             <button data-lang="fr" class="${currentLang === 'fr' ? 'active' : ''}">FR</button>
+          </div>
+
+          <!-- Mobile language dropdown -->
+          <div class="language-dropdown">
+            <button class="language-dropdown__toggle" aria-label="Change language" aria-expanded="false">
+              <span class="current-lang-code">${currentLang.toUpperCase()}</span>
+            </button>
+            <div class="language-dropdown__menu">
+              <button data-lang="es" class="${currentLang === 'es' ? 'active' : ''}">ES</button>
+              <button data-lang="en" class="${currentLang === 'en' ? 'active' : ''}">EN</button>
+              <button data-lang="fr" class="${currentLang === 'fr' ? 'active' : ''}">FR</button>
+            </div>
           </div>
 
           <!-- Mobile burger button -->
@@ -838,6 +861,7 @@ class App {
    * @private
    */
   _initLanguageSwitcher() {
+    // Desktop language switcher
     const langButtons = document.querySelectorAll('.language-switcher button');
 
     langButtons.forEach(button => {
@@ -846,6 +870,47 @@ class App {
         await this.changeLanguage(lang);
       });
     });
+
+    // Mobile language dropdown
+    const dropdown = document.querySelector('.language-dropdown');
+    const dropdownToggle = document.querySelector('.language-dropdown__toggle');
+    const dropdownButtons = document.querySelectorAll('.language-dropdown__menu button');
+
+    if (dropdownToggle && dropdown) {
+      // Toggle dropdown
+      dropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.contains('active');
+        dropdown.classList.toggle('active');
+        dropdownToggle.setAttribute('aria-expanded', !isOpen);
+      });
+
+      // Change language from dropdown
+      dropdownButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+          const lang = button.getAttribute('data-lang');
+          await this.changeLanguage(lang);
+          dropdown.classList.remove('active');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('active');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close dropdown on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+          dropdown.classList.remove('active');
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   }
 
   /**
@@ -893,6 +958,9 @@ class App {
 
       // Re-render la navigation et le footer
       await this._initGlobalComponents();
+
+      // Met à jour le dropdown mobile (au cas où il n'a pas été mis à jour)
+      this._updateMobileLangDisplay();
 
       // Reload la page actuelle pour afficher les nouvelles traductions
       await router.reload();
